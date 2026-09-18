@@ -4,12 +4,15 @@ layout: default
 
 <header class="hero">
   <p class="hero__kicker">Workshop</p>
+  <a class="hero__organiser" href="{{ site.organiser.url }}">
+    <img src="{{ site.organiser.logo | relative_url }}" alt="{{ site.organiser.full_name }}" width="523" height="194">
+    <span class="hero__organiser-text">Organised by {{ site.organiser.name }}</span>
+  </a>
   <h1 class="hero__title">{{ site.title }}</h1>
   <p class="hero__lead">
     Artificial intelligence is starting to change how mathematics is done, from
     formalisation and proof assistants to conjecture generation and automated
-    reasoning. This half-day workshop brings together mathematicians and
-    computer scientists in the Netherlands to develop a shared vision: what
+    reasoning. This half-day workshop brings together mathematicians in the Netherlands to develop a shared vision: what
     should mathematics with AI look like, and what do we need to get there?
   </p>
 
@@ -38,16 +41,7 @@ layout: default
 <section class="section" id="about">
   <h2>About the workshop</h2>
   <p>
-    The aim of the afternoon is not a series of results, but a direction. We
-    want to arrive at a picture of where AI can genuinely advance mathematical
-    research, where it cannot, and which questions the mathematical community
-    in the Netherlands should be working on together over the coming years.
-  </p>
-  <p>
-    The format is deliberately discussion-heavy: a small number of talks to set
-    the scene, followed by breakout sessions in which participants work out
-    concrete elements of that vision, and a plenary session to bring the
-    threads together.
+    We invite the mathematics community of the Netherlands to discuss what a positive future of mathematics with AI should look like, leading towards an AIM AI4Math vision statement 2026.
   </p>
 </section>
 
@@ -80,13 +74,18 @@ layout: default
   </p>
 </section>
 
-<!--
-  Add an organisers section once the list is settled, for example:
-
-  <section class="section" id="organisers">
-    <h2>Organisers</h2>
-    <ul class="plain">
-      <li>Name &mdash; Affiliation</li>
-    </ul>
-  </section>
--->
+<section class="section" id="organisers">
+  <h2>Organisers</h2>
+  <p>
+    The workshop is organised by <a href="{{ site.organiser.url }}">{{ site.organiser.full_name }}</a>,
+    the network uniting researchers in the Netherlands working on the mathematics of AI.
+  </p>
+  <ul class="organisers">
+    {%- for person in site.data.organisers -%}
+      <li class="organiser">
+        <span class="organiser__name">{{ person.name }}</span>
+        <span class="organiser__meta">{{ person.role }} &middot; {{ person.affiliation }}</span>
+      </li>
+    {%- endfor -%}
+  </ul>
+</section>

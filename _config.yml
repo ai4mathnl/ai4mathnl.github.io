@@ -20,6 +20,13 @@ workshop:
   registration_url: ""
   contact_email: ""
 
+# The organising body. The list of people lives in _data/organisers.yml.
+organiser:
+  name: "AIM"
+  full_name: "AIM &mdash; AI &amp; Mathematics in the Netherlands"
+  url: "https://aimath.nl"
+  logo: "/assets/img/aim-logo.png"
+
 plugins:
   - jekyll-seo-tag
 
