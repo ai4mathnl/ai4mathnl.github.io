@@ -6,7 +6,6 @@ layout: default
   <p class="hero__kicker">Workshop</p>
   <a class="hero__organiser" href="{{ site.organiser.url }}">
     <img src="{{ site.organiser.logo | relative_url }}" alt="{{ site.organiser.full_name }}" width="523" height="194">
-    <span class="hero__organiser-text">Organised by {{ site.organiser.name }}</span>
   </a>
   <h1 class="hero__title">{{ site.title }}</h1>
   <p class="hero__lead">
@@ -84,7 +83,7 @@ layout: default
     {%- for person in site.data.organisers -%}
       <li class="organiser">
         <span class="organiser__name">{{ person.name }}</span>
-        <span class="organiser__meta">{{ person.role }} &middot; {{ person.affiliation }}</span>
+        <span class="organiser__meta">{{ person.affiliation }}</span>
       </li>
     {%- endfor -%}
   </ul>

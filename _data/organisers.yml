@@ -1,17 +1,15 @@
 ---
-# The AIM (co-)chairs organise the workshop. Source: https://aimath.nl/index.php/about-aim/
+# Workshop organisers, in alphabetical order by surname (tussenvoegsel not
+# counted, so "van Erven" files under E).
 - name: "Christoph Brune"
-  role: "Chair"
   affiliation: "University of Twente"
+- name: "Tim van Erven"
+  affiliation: "University of Amsterdam"
 - name: "Leo van Iersel"
-  role: "Co-chair"
   affiliation: "TU Delft"
 - name: "Tristan van Leeuwen"
-  role: "Co-chair"
   affiliation: "CWI / Utrecht University"
-- name: "Tim van Erven"
-  role: "Co-chair"
-  affiliation: "University of Amsterdam"
 - name: "Olivia Muthsam"
-  role: "Support"
   affiliation: "NWO"
+- name: "Jim Portegies"
+  affiliation: "TU Eindhoven"
