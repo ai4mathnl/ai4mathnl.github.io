@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {%- seo -%}
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  </head>
+  <body>
+    <main class="page">
+      {{ content }}
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        {{ site.workshop.date }} &middot; {{ site.workshop.time }} &middot;
+        {{ site.workshop.venue_full }}, {{ site.workshop.address }}
+      </p>
+    </footer>
+  </body>
+</html>

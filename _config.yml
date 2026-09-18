@@ -1,0 +1,30 @@
+title: "A Vision on the Future of Mathematics with AI"
+tagline: "A half-day workshop at CWI Amsterdam"
+description: >-
+  A half-day workshop on developing a shared vision for the future of
+  mathematics in the age of AI. Thursday 3 December 2026, 13:00-17:00, CWI
+  Amsterdam.
+url: "https://ai4mathnl.github.io"
+baseurl: ""
+
+# Workshop facts live here so the page, the metadata and any future pages all
+# read them from one place.
+workshop:
+  date: "Thursday 3 December 2026"
+  date_iso: "2026-12-03"
+  time: "13:00 - 17:00"
+  venue: "CWI"
+  venue_full: "Centrum Wiskunde & Informatica"
+  address: "Science Park 123, 1098 XG Amsterdam"
+  # Fill in once registration opens; the button appears automatically.
+  registration_url: ""
+  contact_email: ""
+
+plugins:
+  - jekyll-seo-tag
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

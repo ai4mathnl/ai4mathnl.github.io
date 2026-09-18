@@ -1,0 +1,92 @@
+---
+layout: default
+---
+
+<header class="hero">
+  <p class="hero__kicker">Workshop</p>
+  <h1 class="hero__title">{{ site.title }}</h1>
+  <p class="hero__lead">
+    Artificial intelligence is starting to change how mathematics is done, from
+    formalisation and proof assistants to conjecture generation and automated
+    reasoning. This half-day workshop brings together mathematicians and
+    computer scientists in the Netherlands to develop a shared vision: what
+    should mathematics with AI look like, and what do we need to get there?
+  </p>
+
+  <dl class="facts">
+    <div class="fact">
+      <dt>Date</dt>
+      <dd><time datetime="{{ site.workshop.date_iso }}">{{ site.workshop.date }}</time></dd>
+    </div>
+    <div class="fact">
+      <dt>Time</dt>
+      <dd>{{ site.workshop.time }}</dd>
+    </div>
+    <div class="fact">
+      <dt>Location</dt>
+      <dd>{{ site.workshop.venue_full }}<br><span class="fact__sub">{{ site.workshop.address }}</span></dd>
+    </div>
+  </dl>
+
+  {%- if site.workshop.registration_url and site.workshop.registration_url != "" -%}
+    <p><a class="button" href="{{ site.workshop.registration_url }}">Register</a></p>
+  {%- else -%}
+    <p class="notice">Registration is not open yet. Details will follow on this page.</p>
+  {%- endif -%}
+</header>
+
+<section class="section" id="about">
+  <h2>About the workshop</h2>
+  <p>
+    The aim of the afternoon is not a series of results, but a direction. We
+    want to arrive at a picture of where AI can genuinely advance mathematical
+    research, where it cannot, and which questions the mathematical community
+    in the Netherlands should be working on together over the coming years.
+  </p>
+  <p>
+    The format is deliberately discussion-heavy: a small number of talks to set
+    the scene, followed by breakout sessions in which participants work out
+    concrete elements of that vision, and a plenary session to bring the
+    threads together.
+  </p>
+</section>
+
+<section class="section" id="programme">
+  <h2>Programme</h2>
+  <p class="section__note">Provisional &mdash; speakers and session details to be announced.</p>
+  <ol class="programme">
+    {%- for item in site.data.program -%}
+      <li class="programme__item">
+        <span class="programme__time">{{ item.time }}</span>
+        <span class="programme__body">
+          <span class="programme__title">{{ item.title }}</span>
+          {%- if item.speaker -%}<span class="programme__speaker">{{ item.speaker }}</span>{%- endif -%}
+          {%- if item.note -%}<span class="programme__note">{{ item.note }}</span>{%- endif -%}
+        </span>
+      </li>
+    {%- endfor -%}
+  </ol>
+</section>
+
+<section class="section" id="venue">
+  <h2>Venue</h2>
+  <p>
+    The workshop takes place at {{ site.workshop.venue_full }} ({{ site.workshop.venue }}),
+    {{ site.workshop.address }}. CWI is on the Amsterdam Science Park campus, a
+    short walk from Amsterdam Science Park railway station.
+  </p>
+  <p>
+    <a href="https://www.cwi.nl/en/contact/">Directions and contact details at cwi.nl</a>
+  </p>
+</section>
+
+<!--
+  Add an organisers section once the list is settled, for example:
+
+  <section class="section" id="organisers">
+    <h2>Organisers</h2>
+    <ul class="plain">
+      <li>Name &mdash; Affiliation</li>
+    </ul>
+  </section>
+-->

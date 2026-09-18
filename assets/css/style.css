@@ -1,0 +1,186 @@
+/* Palette kept in step with leovaniersel.nl: #2f6f9f accent, slate-grey text,
+   pale blue-grey borders. No web fonts, so the page renders instantly. */
+:root {
+  --accent: #2f6f9f;
+  --accent-dark: #24587e;
+  --ink: #1f2933;
+  --muted: #5f6b7a;
+  --border: #e3e8ef;
+  --tint: #f2f7fb;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #fbfcfd;
+  color: var(--ink);
+  font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+.page {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 1rem;
+}
+
+a { color: var(--accent); }
+a:hover { color: var(--accent-dark); }
+
+/* ---- Hero ---- */
+.hero {
+  border-left: 4px solid var(--accent);
+  padding-left: 1.25rem;
+  margin-bottom: 3rem;
+}
+
+.hero__kicker {
+  margin: 0 0 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.hero__title {
+  margin: 0 0 1rem;
+  font-size: 2.1rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.hero__lead {
+  margin: 0 0 1.75rem;
+  font-size: 1.05rem;
+  color: #3d4855;
+}
+
+/* ---- Date / time / location ---- */
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0.75rem;
+  margin: 0 0 1.5rem;
+}
+
+.fact {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.7rem 0.9rem;
+}
+
+.fact dt {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.fact dd {
+  margin: 0.2rem 0 0;
+  font-weight: 600;
+}
+
+.fact__sub {
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* ---- Calls to action ---- */
+.button {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.55rem 1.3rem;
+  border-radius: 6px;
+}
+
+.button:hover { background: var(--accent-dark); color: #fff; }
+
+.notice {
+  background: var(--tint);
+  border: 1px solid #cfdae6;
+  border-radius: 6px;
+  padding: 0.6rem 0.9rem;
+  margin: 0;
+  font-size: 0.92rem;
+  color: #35506b;
+}
+
+/* ---- Sections ---- */
+.section { margin-bottom: 2.75rem; }
+
+.section h2 {
+  font-size: 1.3rem;
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.section__note {
+  margin: -0.3rem 0 1rem;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--muted);
+}
+
+/* ---- Programme ---- */
+.programme {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.programme__item {
+  display: flex;
+  gap: 1rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.programme__item:last-child { border-bottom: 0; }
+
+.programme__time {
+  flex: 0 0 4.2rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.programme__body { display: flex; flex-direction: column; }
+.programme__title { font-weight: 600; }
+.programme__speaker { font-size: 0.92rem; }
+
+.programme__note {
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.plain { list-style: none; margin: 0; padding: 0; }
+.plain li { padding: 0.2rem 0; }
+
+/* ---- Footer ---- */
+.site-footer {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 1.25rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.site-footer p { margin: 0; }
+
+@media (max-width: 480px) {
+  .page { padding-top: 1.75rem; }
+  .hero__title { font-size: 1.65rem; }
+  .programme__item { flex-direction: column; gap: 0.15rem; }
+}
