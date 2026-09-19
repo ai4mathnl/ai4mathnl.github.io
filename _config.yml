@@ -19,8 +19,10 @@ workshop:
   # UTC stamps for the calendar file. December is CET, so UTC+1.
   start_utc: "20261203T120000Z"
   end_utc: "20261203T160000Z"
-  # Fill in once registration opens; the button appears automatically.
-  registration_url: ""
+  # Paste the Google Form's embed URL here once the form exists (in Forms:
+  # Send > <> > copy the src="..." value). The Register button and the form on
+  # /register/ both appear automatically as soon as this is filled in.
+  registration_form_url: ""
   contact_email: ""
 
 # The organising body. The list of people lives in _data/organisers.yml.

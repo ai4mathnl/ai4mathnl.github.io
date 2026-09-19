@@ -214,6 +214,28 @@ a:hover { color: var(--accent-dark); }
 .plain { list-style: none; margin: 0; padding: 0; }
 .plain li { padding: 0.2rem 0; }
 
+/* ---- Embedded form ---- */
+/* Google's iframe brings its own padding, so the wrapper only has to keep it
+   from overflowing on a phone. */
+.form-embed {
+  margin: 0 0 1rem;
+}
+
+.form-embed iframe {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border: 0;
+}
+
+.hero__back {
+  text-decoration: none;
+}
+
+.hero__back:hover {
+  text-decoration: underline;
+}
+
 /* ---- Related links ---- */
 .links {
   list-style: none;

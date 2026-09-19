@@ -1,0 +1,96 @@
+---
+layout: default
+title: Registration
+permalink: /register/
+image: /assets/img/social-card.png
+---
+
+<header class="hero">
+  <p class="hero__kicker"><a class="hero__back" href="{{ '/' | relative_url }}">{{ site.title }}</a></p>
+  <h1 class="hero__title">Registration</h1>
+  <p class="hero__lead">
+    The workshop is free to attend and open to everyone doing mathematics in the
+    Netherlands, at any career stage. Places are limited by the size of the room,
+    so please register in advance.
+  </p>
+
+  <dl class="facts">
+    <div class="fact">
+      <dt>Date</dt>
+      <dd><time datetime="{{ site.workshop.date_iso }}">{{ site.workshop.date }}</time></dd>
+    </div>
+    <div class="fact">
+      <dt>Time</dt>
+      <dd>{{ site.workshop.time }}</dd>
+    </div>
+    <div class="fact">
+      <dt>Location</dt>
+      <dd>{{ site.workshop.venue_full }}<br><span class="fact__sub">{{ site.workshop.address }}</span></dd>
+    </div>
+  </dl>
+</header>
+
+<section class="section" id="form">
+  <h2>Register</h2>
+  {%- if site.workshop.registration_form_url and site.workshop.registration_form_url != "" -%}
+    <p class="section__note">
+      The form asks for your name, e-mail and affiliation, your career stage, and
+      which questions you would like the workshop to discuss.
+    </p>
+    <div class="form-embed">
+      <iframe
+        src="{{ site.workshop.registration_form_url }}"
+        title="Registration form"
+        loading="lazy"
+        width="100%"
+        height="1100"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0">Loading the registration form&hellip;</iframe>
+    </div>
+    <p class="section__note">
+      Registration is handled by Google Forms, so the form above will not appear
+      if your browser blocks third-party frames.
+      <a href="{{ site.workshop.registration_form_url }}">Open the form in a new tab</a>
+      if you would rather fill it in there.
+    </p>
+  {%- else -%}
+    <p class="notice">
+      Registration is not open yet. It will open on this page, and the date will
+      be announced on the workshop page.
+    </p>
+    <p class="hero__actions">
+      <a class="button button--quiet" href="{{ '/calendar.ics' | relative_url }}">Add the date to your calendar</a>
+    </p>
+  {%- endif -%}
+</section>
+
+<section class="section" id="practical">
+  <h2>Practical details</h2>
+  <ul class="links">
+    <li>
+      Attendance is free of charge, including the drinks afterwards.
+    </li>
+    <li>
+      The workshop is held in English.
+    </li>
+    <li>
+      No expertise in AI or formalisation is required.
+      <span class="links__note">See <a href="{{ '/#attendees' | relative_url }}">who should attend</a> on the workshop page.</span>
+    </li>
+    <li>
+      Getting there
+      <span class="links__note">
+        {{ site.workshop.venue_full }}, {{ site.workshop.address }} &mdash; a
+        five-minute walk from Amsterdam Science Park station.
+        <a href="https://www.cwi.nl/en/about/visitor-information/">Directions and visitor information at cwi.nl</a>
+      </span>
+    </li>
+  </ul>
+  {%- if site.workshop.contact_email and site.workshop.contact_email != "" -%}
+    <p>
+      Questions about registration? Write to
+      <a href="mailto:{{ site.workshop.contact_email }}">{{ site.workshop.contact_email }}</a>.
+    </p>
+  {%- endif -%}
+</section>

@@ -36,13 +36,16 @@ image: /assets/img/social-card.png
     </div>
   </dl>
 
-  {%- if site.workshop.registration_url and site.workshop.registration_url != "" -%}
+  {%- if site.workshop.registration_form_url and site.workshop.registration_form_url != "" -%}
     <p class="hero__actions">
-      <a class="button" href="{{ site.workshop.registration_url }}">Register</a>
+      <a class="button" href="{{ '/register/' | relative_url }}">Register</a>
       <a class="button button--quiet" href="{{ '/calendar.ics' | relative_url }}">Add to calendar</a>
     </p>
   {%- else -%}
-    <p class="notice">Registration is not open yet. Details will follow on this page.</p>
+    <p class="notice">
+      Registration is not open yet. It will open on the
+      <a href="{{ '/register/' | relative_url }}">registration page</a>.
+    </p>
     <p class="hero__actions"><a class="button button--quiet" href="{{ '/calendar.ics' | relative_url }}">Add to calendar</a></p>
   {%- endif -%}
 </header>
