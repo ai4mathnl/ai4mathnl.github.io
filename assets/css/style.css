@@ -47,12 +47,25 @@ a:hover { color: var(--accent-dark); }
 
 /* Organiser mark: the logo alone carries the attribution, so its alt text is
    what anyone with images off or a screen reader gets. */
-.hero__organiser {
-  display: inline-block;
+.hero__logos {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
   margin: 0 0 1.75rem;
 }
 
+.hero__organiser,
+.hero__partner { display: inline-block; }
+
 .hero__organiser img {
+  width: auto;
+  height: 62px;
+  display: block;
+}
+
+/* The NWO mark is a tall block rather than a wordmark; matched to the AIM
+   logo's height it reads as a peer rather than a footnote. */
+.hero__partner img {
   width: auto;
   height: 62px;
   display: block;
