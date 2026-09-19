@@ -16,6 +16,9 @@ workshop:
   venue: "CWI"
   venue_full: "Centrum Wiskunde & Informatica"
   address: "Science Park 123, 1098 XG Amsterdam"
+  # UTC stamps for the calendar file. December is CET, so UTC+1.
+  start_utc: "20261203T120000Z"
+  end_utc: "20261203T160000Z"
   # Fill in once registration opens; the button appears automatically.
   registration_url: ""
   contact_email: ""

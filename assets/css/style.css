@@ -131,6 +131,27 @@ a:hover { color: var(--accent-dark); }
 
 .button:hover { background: var(--accent-dark); color: #fff; }
 
+/* Secondary action: same shape, so it lines up with Register, but it does not
+   compete with it. */
+.button--quiet {
+  background: #fff;
+  color: var(--accent);
+  border: 1px solid #cfdae6;
+}
+
+.button--quiet:hover {
+  background: var(--tint);
+  color: var(--accent-dark);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  margin: 0.9rem 0 0;
+}
+
 .notice {
   background: var(--tint);
   border: 1px solid #cfdae6;

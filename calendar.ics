@@ -1,0 +1,20 @@
+---
+layout: null
+permalink: /calendar.ics
+---
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//AIM//{{ site.title }}//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:workshop-{{ site.workshop.date_iso }}@ai4math.nl
+DTSTAMP:20260919T000000Z
+DTSTART:{{ site.workshop.start_utc }}
+DTEND:{{ site.workshop.end_utc }}
+SUMMARY:{{ site.title }}
+LOCATION:{{ site.workshop.venue_full | replace: ",", "\," }}\, {{ site.workshop.address | replace: ",", "\," }}
+DESCRIPTION:{{ site.tagline | replace: ",", "\," }}. Details: {{ site.url }}{{ site.baseurl }}/
+URL:{{ site.url }}{{ site.baseurl }}/
+END:VEVENT
+END:VCALENDAR

@@ -1,5 +1,6 @@
 ---
 layout: default
+image: /assets/img/social-card.png
 ---
 
 <header class="hero">
@@ -36,9 +37,13 @@ layout: default
   </dl>
 
   {%- if site.workshop.registration_url and site.workshop.registration_url != "" -%}
-    <p><a class="button" href="{{ site.workshop.registration_url }}">Register</a></p>
+    <p class="hero__actions">
+      <a class="button" href="{{ site.workshop.registration_url }}">Register</a>
+      <a class="button button--quiet" href="{{ '/calendar.ics' | relative_url }}">Add to calendar</a>
+    </p>
   {%- else -%}
     <p class="notice">Registration is not open yet. Details will follow on this page.</p>
+    <p class="hero__actions"><a class="button button--quiet" href="{{ '/calendar.ics' | relative_url }}">Add to calendar</a></p>
   {%- endif -%}
 </header>
 
