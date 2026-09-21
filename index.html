@@ -140,7 +140,12 @@ image: /assets/img/social-card.png
       <li class="organiser">
         <span class="organiser__name">{{ person.name }}</span>
         <span class="organiser__meta">{{ person.affiliation }}</span>
+        {%- if person.contact -%}<span class="organiser__tag">Main contact</span>{%- endif -%}
       </li>
     {%- endfor -%}
   </ul>
+  <p class="organisers__funding">
+    We thank <a href="https://platformwiskunde.nl/">Platform Wiskunde Nederland (PWN)</a>
+    for funding this workshop.
+  </p>
 </section>

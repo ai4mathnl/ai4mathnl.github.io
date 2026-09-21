@@ -1,11 +1,18 @@
 ---
 # Workshop organisers, in alphabetical order by surname (tussenvoegsel not
-# counted, so "van Erven" files under E).
+# counted, so "van Erven" files under E). `contact: true` puts a "Main
+# contact" label on that person's card.
 - name: "Christoph Brune"
   affiliation: "University of Twente"
+  contact: true
 - name: "Tim van Erven"
   affiliation: "University of Amsterdam"
+  contact: true
 - name: "Leo van Iersel"
   affiliation: "TU Delft"
+- name: "Tristan van Leeuwen"
+  affiliation: "CWI / Utrecht University"
+- name: "Olivia Muthsam"
+  affiliation: "NWO"
 - name: "Jim Portegies"
   affiliation: "TU Eindhoven"
