@@ -5,14 +5,9 @@ image: /assets/img/social-card.png
 
 <header class="hero">
   <p class="hero__kicker">Workshop</p>
-  <p class="hero__logos">
-    <a class="hero__organiser" href="{{ site.organiser.url }}">
-      <img src="{{ site.organiser.logo | relative_url }}" alt="{{ site.organiser.full_name }}" width="523" height="194">
-    </a>
-    <a class="hero__partner" href="{{ site.partner.url }}">
-      <img src="{{ site.partner.logo | relative_url }}" alt="{{ site.partner.full_name }}" width="53" height="90">
-    </a>
-  </p>
+  <a class="hero__organiser" href="{{ site.organiser.url }}">
+    <img src="{{ site.organiser.logo | relative_url }}" alt="{{ site.organiser.full_name }}" width="523" height="194">
+  </a>
   <h1 class="hero__title">{{ site.title }}</h1>
   <p class="hero__lead">
     Artificial intelligence is starting to change how mathematics is done, from

@@ -32,13 +32,6 @@ organiser:
   url: "https://aimath.nl"
   logo: "/assets/img/aim-logo.png"
 
-# A second logo in the hero. Name and URL live here with the organiser's.
-partner:
-  name: "NWO"
-  full_name: "Dutch Research Council (NWO)"
-  url: "https://www.nwo.nl/"
-  logo: "/assets/img/nwo-logo.svg"
-
 plugins:
   - jekyll-seo-tag
 
