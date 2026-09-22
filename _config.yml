@@ -2,7 +2,7 @@ title: "Shaping the Future of Mathematics with AI"
 tagline: "A half-day workshop at CWI Amsterdam"
 description: >-
   A half-day workshop on developing a shared vision for the future of
-  mathematics in the age of AI. Thursday 3 December 2026, 13:00-17:00, CWI
+  mathematics in the age of AI. Thursday 3 December 2026, 13:00-18:00, CWI
   Amsterdam.
 url: "https://ai4math.nl"
 baseurl: ""
@@ -12,13 +12,13 @@ baseurl: ""
 workshop:
   date: "Thursday 3 December 2026"
   date_iso: "2026-12-03"
-  time: "13:00 - 17:00"
+  time: "13:00 - 18:00"
   venue: "CWI"
   venue_full: "Centrum Wiskunde & Informatica"
   address: "Science Park 123, 1098 XG Amsterdam"
   # UTC stamps for the calendar file. December is CET, so UTC+1.
   start_utc: "20261203T120000Z"
-  end_utc: "20261203T160000Z"
+  end_utc: "20261203T170000Z"
   # Paste the Google Form's embed URL here once the form exists (in Forms:
   # Send > <> > copy the src="..." value). The Register button and the form on
   # /register/ both appear automatically as soon as this is filled in.

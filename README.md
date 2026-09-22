@@ -1,7 +1,7 @@
 # ai4mathnl.github.io
 
 Website for the workshop **Shaping the Future of Mathematics with AI**,
-Thursday 3 December 2026, 13:00-17:00, CWI Amsterdam.
+Thursday 3 December 2026, 13:00-18:00, CWI Amsterdam.
 
 Published at <https://ai4math.nl/> by GitHub Pages (Jekyll, built from the
 `main` branch). The old <https://ai4mathnl.github.io/> address redirects there.
