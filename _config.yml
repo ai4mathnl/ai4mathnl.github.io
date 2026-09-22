@@ -19,10 +19,10 @@ workshop:
   # UTC stamps for the calendar file. December is CET, so UTC+1.
   start_utc: "20261203T120000Z"
   end_utc: "20261203T170000Z"
-  # Paste the Google Form's embed URL here once the form exists (in Forms:
-  # Send > <> > copy the src="..." value). The Register button and the form on
-  # /register/ both appear automatically as soon as this is filled in.
-  registration_form_url: ""
+  # The Microsoft Form's embed URL (in Forms: Collect responses > </> > the
+  # src="..." value). While this is set, /register/ embeds the form and the
+  # front page shows a Register button; empty it to close registration.
+  registration_form_url: "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=TVJuCSlpMECM04q0LeCIewgTrqkV-vVDoVLTuHxUSydUNTQ4VE41VUZJNEJCWUlPNVRWUUZYMjFJUS4u&embed=true"
   contact_email: ""
 
 # The organising body. The list of people lives in _data/organisers.yml.

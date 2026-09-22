@@ -28,12 +28,14 @@ title, date or venue change.
 
 ## Opening registration
 
-Create the Google Form, then in Forms choose **Send > `<>`** and copy the
-`src="..."` value. Paste it into `workshop.registration_form_url` in
-`_config.yml`. That one change embeds the form on `/register/` and turns the
-"not open yet" notice on the front page into a "Register" button. Leave it
-empty and both pages say registration has not opened, so the page is safe to
-publish before the form exists.
+Registration uses a Microsoft Form in TU Delft's Microsoft 365. Its embed URL
+(in Forms: **Collect responses > `</>`**, the `src="..."` value) sits in
+`workshop.registration_form_url` in `_config.yml`. While it is set, the form is
+embedded on `/register/` and the front page shows a "Register" button. Empty it
+to close registration: both pages then say registration is not open.
+
+The form must be set to **Anyone can respond**, or everyone outside TU Delft is
+asked to sign in and cannot register.
 
 ## Local preview
 
