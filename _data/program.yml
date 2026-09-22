@@ -3,7 +3,9 @@
 # an item with no `speaker` simply renders without one.
 - time: "13:00"
   title: "Welcome and introduction"
-- time: "13:30"
+- time: "13:15"
+  title: "Presentation draft vision document"
+- time: "13:45"
   title: "Plenary discussion"
 - time: "15:00"
   title: "Break"
