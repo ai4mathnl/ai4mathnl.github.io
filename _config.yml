@@ -22,7 +22,9 @@ workshop:
   # The Microsoft Form's embed URL (in Forms: Collect responses > </> > the
   # src="..." value). While this is set, /register/ embeds the form and the
   # front page shows a Register button; empty it to close registration.
-  registration_form_url: "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=TVJuCSlpMECM04q0LeCIewgTrqkV-vVDoVLTuHxUSydUNTQ4VE41VUZJNEJCWUlPNVRWUUZYMjFJUS4u&embed=true"
+  # Registration is temporarily closed. To reopen it, put this value back:
+  # https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=TVJuCSlpMECM04q0LeCIewgTrqkV-vVDoVLTuHxUSydUNTQ4VE41VUZJNEJCWUlPNVRWUUZYMjFJUS4u&embed=true
+  registration_form_url: ""
   contact_email: ""
 
 # The organising body. The list of people lives in _data/organisers.yml.
