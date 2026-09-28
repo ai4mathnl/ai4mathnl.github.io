@@ -1,23 +1,30 @@
 ---
 # Provisional programme. Replace the placeholder items as speakers confirm;
-# an item with no `speaker` simply renders without one.
+# an item with no `speaker` simply renders without one. Items with
+# `kind: break` render as quiet bands that separate the sessions.
 - time: "09:30"
   title: "Arrival with coffee and tea"
+  kind: break
 - time: "10:00"
   title: "Welcome and introduction"
 - time: "10:15"
   title: "Presentation draft vision document"
+- time: "10:45"
+  title: "Break"
+  kind: break
 - time: "11:00"
   title: "Plenary discussion"
 - time: "12:00"
   title: "Lunch"
+  kind: break
 - time: "13:00"
   title: "Breakout discussions"
   note: "Working towards a shared vision in small groups"
 - time: "14:00"
   title: "Break"
-- time: "14:30"
-  title: "Plenary wrap-up"
+  kind: break
+- time: "14:15"
+  title: "Plenary synthesis"
   note: "Reporting back and next steps"
 - time: "15:00"
   title: "End of workshop"

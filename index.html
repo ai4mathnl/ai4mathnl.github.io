@@ -71,7 +71,7 @@ image: /assets/img/social-card.png
   <p class="section__note">Provisional &mdash; details to be announced.</p>
   <ol class="programme">
     {%- for item in site.data.program -%}
-      <li class="programme__item">
+      <li class="programme__item{% if item.kind == 'break' %} programme__item--break{% endif %}">
         <span class="programme__time">{{ item.time }}</span>
         <span class="programme__body">
           <span class="programme__title">{{ item.title }}</span>

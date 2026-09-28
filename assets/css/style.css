@@ -182,6 +182,28 @@ a:hover { color: var(--accent-dark); }
 
 .programme__item:last-child { border-bottom: 0; }
 
+/* Breaks and lunch: a quiet tinted band that separates the sessions rather
+   than competing with them. The negative margin keeps the time column
+   aligned with the sessions above and below. */
+.programme__item--break {
+  margin: 0.2rem -0.6rem;
+  padding: 0.3rem 0.6rem;
+  border-bottom: 0;
+  border-radius: 4px;
+  background: var(--tint);
+  font-size: 0.88rem;
+}
+
+.programme__item--break .programme__time {
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.programme__item--break .programme__title {
+  font-weight: 400;
+  color: var(--muted);
+}
+
 .programme__time {
   flex: 0 0 4.2rem;
   font-variant-numeric: tabular-nums;
