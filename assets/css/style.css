@@ -37,10 +37,10 @@ a:hover { color: var(--accent-dark); }
 }
 
 .hero__kicker {
-  margin: 0 0 0.35rem;
-  font-size: 0.75rem;
+  margin: 0 0 0.75rem;
+  font-size: 1.05rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--accent);
 }
@@ -49,12 +49,12 @@ a:hover { color: var(--accent-dark); }
    what anyone with images off or a screen reader gets. */
 .hero__organiser {
   display: inline-block;
-  margin: 0 0 1.75rem;
+  margin: 0 0 2rem;
 }
 
 .hero__organiser img {
   width: auto;
-  height: 76px;
+  height: 120px;
   display: block;
 }
 
@@ -215,7 +215,11 @@ a:hover { color: var(--accent-dark); }
   border: 0;
 }
 
+/* The back link borrows the kicker slot but is navigation, not a label, so it
+   keeps the smaller caption size. */
 .hero__back {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
   text-decoration: none;
 }
 
@@ -307,6 +311,8 @@ a:hover { color: var(--accent-dark); }
 
 @media (max-width: 480px) {
   .page { padding-top: 1.75rem; }
+  .hero__kicker { font-size: 0.9rem; }
+  .hero__organiser img { height: 90px; }
   .hero__title { font-size: 1.65rem; }
   .programme__item { flex-direction: column; gap: 0.15rem; }
 }
