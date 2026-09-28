@@ -2,7 +2,7 @@ title: "Shaping the Future of Mathematics with AI"
 tagline: "A half-day workshop at CWI Amsterdam"
 description: >-
   A half-day workshop on developing a shared vision for the future of
-  mathematics in the age of AI. Thursday 3 December 2026, 13:00-18:00, CWI
+  mathematics in the age of AI. Friday 4 December 2026, 09:30-15:00, CWI
   Amsterdam.
 url: "https://ai4math.nl"
 baseurl: ""
@@ -10,15 +10,17 @@ baseurl: ""
 # Workshop facts live here so the page, the metadata and any future pages all
 # read them from one place.
 workshop:
-  date: "Thursday 3 December 2026"
-  date_iso: "2026-12-03"
-  time: "13:00 - 18:00"
+  date: "Friday 4 December 2026"
+  date_iso: "2026-12-04"
+  time: "09:30 - 15:00"
   venue: "CWI"
   venue_full: "Centrum Wiskunde & Informatica"
+  venue_url: "https://www.cwi.nl/en/about/visitor-information/"
+  room: "Turing room"
   address: "Science Park 123, 1098 XG Amsterdam"
   # UTC stamps for the calendar file. December is CET, so UTC+1.
-  start_utc: "20261203T120000Z"
-  end_utc: "20261203T170000Z"
+  start_utc: "20261204T083000Z"
+  end_utc: "20261204T140000Z"
   # The Microsoft Form's embed URL (in Forms: Collect responses > </> > the
   # src="..." value). While this is set, /register/ embeds the form and the
   # front page shows a Register button; empty it to close registration.

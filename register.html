@@ -25,7 +25,7 @@ image: /assets/img/social-card.png
     </div>
     <div class="fact">
       <dt>Location</dt>
-      <dd>{{ site.workshop.venue_full }}<br><span class="fact__sub">{{ site.workshop.address }}</span></dd>
+      <dd><a href="{{ site.workshop.venue_url }}">{{ site.workshop.venue_full }}</a>, {{ site.workshop.room }}<br><span class="fact__sub">{{ site.workshop.address }}</span></dd>
     </div>
   </dl>
 </header>
@@ -68,7 +68,7 @@ image: /assets/img/social-card.png
   <h2>Practical details</h2>
   <ul class="links">
     <li>
-      Attendance is free of charge, including the drinks afterwards.
+      Attendance is free of charge.
     </li>
     <li>
       The workshop is held in English.
@@ -80,9 +80,10 @@ image: /assets/img/social-card.png
     <li>
       Getting there
       <span class="links__note">
-        {{ site.workshop.venue_full }}, {{ site.workshop.address }} &mdash; a
+        {{ site.workshop.room }}, <a href="{{ site.workshop.venue_url }}">{{ site.workshop.venue_full }}</a>,
+        {{ site.workshop.address }} &mdash; a
         five-minute walk from Amsterdam Science Park station.
-        <a href="https://www.cwi.nl/en/about/visitor-information/">Directions and visitor information at cwi.nl</a>
+        <a href="{{ site.workshop.venue_url }}">Directions and visitor information at cwi.nl</a>
       </span>
     </li>
   </ul>

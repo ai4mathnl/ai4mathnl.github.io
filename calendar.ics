@@ -13,7 +13,7 @@ DTSTAMP:20260919T000000Z
 DTSTART:{{ site.workshop.start_utc }}
 DTEND:{{ site.workshop.end_utc }}
 SUMMARY:{{ site.title }}
-LOCATION:{{ site.workshop.venue_full | replace: ",", "\," }}\, {{ site.workshop.address | replace: ",", "\," }}
+LOCATION:{{ site.workshop.room }}\, {{ site.workshop.venue_full | replace: ",", "\," }}\, {{ site.workshop.address | replace: ",", "\," }}
 DESCRIPTION:{{ site.tagline | replace: ",", "\," }}. Details: {{ site.url }}{{ site.baseurl }}/
 URL:{{ site.url }}{{ site.baseurl }}/
 END:VEVENT

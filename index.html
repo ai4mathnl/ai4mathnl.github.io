@@ -24,7 +24,7 @@ image: /assets/img/social-card.png
     </div>
     <div class="fact">
       <dt>Location</dt>
-      <dd>{{ site.workshop.venue_full }}<br><span class="fact__sub">{{ site.workshop.address }}</span></dd>
+      <dd><a href="{{ site.workshop.venue_url }}">{{ site.workshop.venue_full }}</a>, {{ site.workshop.room }}<br><span class="fact__sub">{{ site.workshop.address }}</span></dd>
     </div>
   </dl>
 
@@ -114,12 +114,13 @@ image: /assets/img/social-card.png
 <section class="section" id="venue">
   <h2>Venue</h2>
   <p>
-    The workshop takes place at {{ site.workshop.venue_full }} ({{ site.workshop.venue }}),
+    The workshop takes place in the {{ site.workshop.room }} at
+    <a href="{{ site.workshop.venue_url }}">{{ site.workshop.venue_full }}</a> ({{ site.workshop.venue }}),
     {{ site.workshop.address }}. CWI is on the Amsterdam Science Park campus, a
     short walk from Amsterdam Science Park railway station.
   </p>
   <p>
-    <a href="https://www.cwi.nl/en/about/visitor-information/">Directions and visitor information at cwi.nl</a>
+    <a href="{{ site.workshop.venue_url }}">Directions and visitor information at cwi.nl</a>
   </p>
 </section>
 
