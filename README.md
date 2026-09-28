@@ -23,8 +23,13 @@ file at the repository root in step.
 
 The sharing card (`assets/img/social-card.png`) is never shown on the page: it
 is what LinkedIn, Slack, WhatsApp and the like display when the link is posted,
-via the `image:` line in `index.html`'s front matter. Regenerate it if the
-title, date or venue change.
+via the `image:` line in `index.html`'s front matter. It reads the title, date,
+time and venue from `_config.yml`, so regenerate it whenever those change:
+
+```bash
+pip install pillow font-hanken-grotesk
+python3 tools/social_card.py
+```
 
 ## Opening registration
 
