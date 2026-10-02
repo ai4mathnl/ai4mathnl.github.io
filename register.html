@@ -64,33 +64,3 @@ image: /assets/img/social-card.png
   {%- endif -%}
 </section>
 
-<section class="section" id="practical">
-  <h2>Practical details</h2>
-  <ul class="links">
-    <li>
-      Attendance is free of charge.
-    </li>
-    <li>
-      The workshop is held in English.
-    </li>
-    <li>
-      No expertise in AI or formalisation is required.
-      <span class="links__note">See <a href="{{ '/#attendees' | relative_url }}">who should attend</a> on the workshop page.</span>
-    </li>
-    <li>
-      Getting there
-      <span class="links__note">
-        {{ site.workshop.room }}, <a href="{{ site.workshop.venue_url }}">{{ site.workshop.venue_full }}</a>,
-        {{ site.workshop.address }} &mdash; a
-        five-minute walk from Amsterdam Science Park station.
-        <a href="{{ site.workshop.venue_url }}">Directions and visitor information at cwi.nl</a>
-      </span>
-    </li>
-  </ul>
-  {%- if site.workshop.contact_email and site.workshop.contact_email != "" -%}
-    <p>
-      Questions about registration? Write to
-      <a href="mailto:{{ site.workshop.contact_email }}">{{ site.workshop.contact_email }}</a>.
-    </p>
-  {%- endif -%}
-</section>
