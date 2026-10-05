@@ -73,11 +73,14 @@ def spaced(x, y, text, f, fill, spacing):
         x += draw.textlength(ch, font=f) + spacing
 
 
-# Kicker
-spaced(LEFT, 89, "WORKSHOP", font("Bold", 20), ACCENT, 3.2)
+# A "Something:" prefix in the title becomes the kicker; the rest is the title.
+kicker, _, main = title.rpartition(": ")
+if not main:
+    kicker, main = "Workshop", title
+spaced(LEFT, 89, kicker.upper(), font("Bold", 20), ACCENT, 3.2)
 
 # Title on two lines, breaking before the last three words.
-words = title.split()
+words = main.split()
 line1, line2 = " ".join(words[:-3]), " ".join(words[-3:])
 tf = font("Bold", 74)
 draw.text((LEFT, 263), line1, font=tf, fill=INK, anchor="ls")
