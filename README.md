@@ -42,6 +42,11 @@ close registration: both pages then say registration is temporarily closed.
 The store sends `X-Frame-Options: DENY`, so it cannot be embedded in the page;
 `/register/` links out to it instead.
 
+CWI also publishes a copy of this page at
+<https://www.cwi.nl/en/research/computational-imaging/events/ai4math-workshop-shaping-the-future-of-mathematics-with-ai/>.
+It is maintained separately, so changes to the text here have to be passed on
+to CWI by hand.
+
 ## Local preview
 
 ```bash
