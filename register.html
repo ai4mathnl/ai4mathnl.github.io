@@ -9,9 +9,9 @@ image: /assets/img/social-card.png
   <p class="hero__kicker"><a class="hero__back" href="{{ '/' | relative_url }}">{{ site.title }}</a></p>
   <h1 class="hero__title">Registration</h1>
   <p class="hero__lead">
-    The workshop is free to attend and open to everyone doing mathematics in the
-    Netherlands, at any career stage. Places are limited by the size of the room,
-    so please register in advance.
+    The workshop is open to everyone doing mathematics in the Netherlands, at any
+    career stage. Places are limited by the size of the room, so please register
+    in advance.
   </p>
 
   <dl class="facts">
@@ -32,27 +32,16 @@ image: /assets/img/social-card.png
 
 <section class="section" id="form">
   <h2>Register</h2>
-  {%- if site.workshop.registration_form_url and site.workshop.registration_form_url != "" -%}
-    <p class="section__note">
-      The form asks for your name, e-mail and affiliation, your career stage, and
-      which questions you would like the workshop to discuss.
+  {%- if site.workshop.registration_url and site.workshop.registration_url != "" -%}
+    <p>
+      Registration runs through the CWI store, which handles the payment. You will
+      be asked to create an account there if you do not have one. The registration
+      fee of {{ site.workshop.registration_fee }} includes coffee, tea, refreshments,
+      and lunch.
     </p>
-    <div class="form-embed">
-      <iframe
-        src="{{ site.workshop.registration_form_url }}"
-        title="Registration form"
-        loading="lazy"
-        width="100%"
-        height="1650"
-        frameborder="0"
-        marginheight="0"
-        marginwidth="0">Loading the registration form&hellip;</iframe>
-    </div>
-    <p class="section__note">
-      Registration is handled by Microsoft Forms, so the form above will not
-      appear if your browser blocks third-party frames.
-      <a href="{{ site.workshop.registration_form_url | remove: '&embed=true' }}">Open the form in a new tab</a>
-      if you would rather fill it in there.
+    <p class="hero__actions">
+      <a class="button" href="{{ site.workshop.registration_url }}">Register at the CWI store</a>
+      <a class="button button--quiet" href="{{ '/calendar.ics' | relative_url }}">Add to calendar</a>
     </p>
   {%- else -%}
     <p class="notice">

@@ -33,14 +33,14 @@ python3 tools/social_card.py
 
 ## Opening registration
 
-Registration uses a Microsoft Form in TU Delft's Microsoft 365. Its embed URL
-(in Forms: **Collect responses > `</>`**, the `src="..."` value) sits in
-`workshop.registration_form_url` in `_config.yml`. While it is set, the form is
-embedded on `/register/` and the front page shows a "Register" button. Empty it
-to close registration: both pages then say registration is not open.
+Registration and payment run through CWI's store. The product page URL sits in
+`workshop.registration_url` in `_config.yml`, with the price in
+`workshop.registration_fee`. While the URL is set, `/register/` shows a button
+to the store and the front page shows a "Register" button. Empty the URL to
+close registration: both pages then say registration is temporarily closed.
 
-The form must be set to **Anyone can respond**, or everyone outside TU Delft is
-asked to sign in and cannot register.
+The store sends `X-Frame-Options: DENY`, so it cannot be embedded in the page;
+`/register/` links out to it instead.
 
 ## Local preview
 

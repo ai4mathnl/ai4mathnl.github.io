@@ -28,7 +28,7 @@ image: /assets/img/social-card.png
     </div>
   </dl>
 
-  {%- if site.workshop.registration_form_url and site.workshop.registration_form_url != "" -%}
+  {%- if site.workshop.registration_url and site.workshop.registration_url != "" -%}
     <p class="hero__actions">
       <a class="button" href="{{ '/register/' | relative_url }}">Register</a>
       <a class="button button--quiet" href="{{ '/calendar.ics' | relative_url }}">Add to calendar</a>
