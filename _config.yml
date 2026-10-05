@@ -25,6 +25,10 @@ workshop:
   # embedded, so /register/ links out to it. Empty this to close registration.
   registration_url: "https://store.cwi.nl/catalogue/AI4Math_183/"
   registration_fee: "€35"
+  # Cancellations before this date are refunded in full; requests go to CWI.
+  cancellation_deadline: "1 December"
+  cancellation_contact: "Nada Mitrovic"
+  cancellation_email: "nada.mitrovic@cwi.nl"
   contact_email: ""
 
 # The organising body. The list of people lives in _data/organisers.yml.

@@ -39,6 +39,11 @@ image: /assets/img/social-card.png
       fee of {{ site.workshop.registration_fee }} includes coffee, tea, refreshments,
       and lunch.
     </p>
+    <p>
+      Cancellations received before {{ site.workshop.cancellation_deadline }} are
+      eligible for a full refund. To cancel your registration, please email
+      <a href="mailto:{{ site.workshop.cancellation_email }}">{{ site.workshop.cancellation_contact }}</a>.
+    </p>
     <p class="hero__actions">
       <a class="button" href="{{ site.workshop.registration_url }}">Register at the CWI store</a>
       <a class="button button--quiet" href="{{ '/calendar.ics' | relative_url }}">Add to calendar</a>
