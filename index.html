@@ -133,7 +133,9 @@ image: /assets/img/social-card.png
   <ul class="organisers">
     {%- for person in site.data.organisers -%}
       <li class="organiser">
-        <span class="organiser__name">{{ person.name }}</span>
+        <span class="organiser__name">
+          {%- if person.email -%}<a href="mailto:{{ person.email }}">{{ person.name }}</a>{%- else -%}{{ person.name }}{%- endif -%}
+        </span>
         <span class="organiser__meta">{{ person.affiliation }}</span>
         {%- if person.contact -%}<span class="organiser__tag">Main contact</span>{%- endif -%}
       </li>

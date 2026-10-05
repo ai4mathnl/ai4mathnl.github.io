@@ -1,13 +1,16 @@
 ---
 # Workshop organisers, in alphabetical order by surname (tussenvoegsel not
 # counted, so "van Erven" files under E). `contact: true` puts a "Main
-# contact" label on that person's card.
+# contact" label on that person's card; `email` turns the name into a
+# mailto link.
 - name: "Christoph Brune"
   affiliation: "University of Twente"
   contact: true
+  email: "c.brune@utwente.nl"
 - name: "Tim van Erven"
   affiliation: "University of Amsterdam"
   contact: true
+  email: "tim@timvanerven.nl"
 - name: "Leo van Iersel"
   affiliation: "TU Delft"
 - name: "Tristan van Leeuwen"
