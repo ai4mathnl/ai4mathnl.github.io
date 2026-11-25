@@ -1,7 +1,8 @@
 ---
 # Provisional programme. Replace the placeholder items as speakers confirm;
 # an item with no `speaker` simply renders without one. Items with
-# `kind: break` render as quiet bands that separate the sessions.
+# `kind: break` render as quiet bands that separate the sessions. An item with
+# a `url` has its title linked.
 - time: "09:30"
   title: "Arrival with coffee and tea"
   kind: break
@@ -9,6 +10,7 @@
   title: "Welcome and introduction"
 - time: "10:15"
   title: "Presentation draft vision document"
+  url: "/vision/"
 - time: "10:45"
   title: "First reactions"
 - time: "11:00"

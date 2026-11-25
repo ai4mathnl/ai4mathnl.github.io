@@ -42,6 +42,16 @@ image: /assets/img/social-card.png
   {%- endif -%}
 </header>
 
+{%- comment %} The one thing on this page that should not be overlooked. {% endcomment %}
+<aside class="callout" aria-labelledby="vision-callout">
+  <div class="callout__text">
+    <p class="callout__kicker">Now available</p>
+    <h2 class="callout__title" id="vision-callout">{% if site.vision_draft %}Draft vision{% else %}Vision{% endif %} document</h2>
+    <p class="callout__note">The starting point for the discussions at the workshop.</p>
+  </div>
+  <a class="button callout__button" href="{{ '/vision/' | relative_url }}">Read the {% if site.vision_draft %}draft {% endif %}vision</a>
+</aside>
+
 <section class="section" id="about">
   <h2>About the workshop</h2>
   <p>
@@ -74,7 +84,9 @@ image: /assets/img/social-card.png
       <li class="programme__item{% if item.kind == 'break' %} programme__item--break{% endif %}">
         <span class="programme__time">{{ item.time }}</span>
         <span class="programme__body">
-          <span class="programme__title">{{ item.title }}</span>
+          <span class="programme__title">
+            {%- if item.url -%}<a href="{{ item.url | relative_url }}">{{ item.title }}</a>{%- else -%}{{ item.title }}{%- endif -%}
+          </span>
           {%- if item.speaker -%}<span class="programme__speaker">{{ item.speaker }}</span>{%- endif -%}
           {%- if item.note -%}<span class="programme__note">{{ item.note }}</span>{%- endif -%}
         </span>

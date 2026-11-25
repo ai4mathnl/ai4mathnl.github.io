@@ -149,6 +149,50 @@ a:hover { color: var(--accent-dark); }
   color: #35506b;
 }
 
+/* ---- Callout ---- */
+/* The only solid block of colour on the page, so that it is not overlooked:
+   everything else is white or pale. */
+.callout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.9rem 1.5rem;
+  margin: 0 0 3rem;
+  padding: 1.1rem 1.4rem;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+}
+
+.callout__text { flex: 1 1 16rem; }
+
+.callout__kicker {
+  margin: 0 0 0.15rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #d5e6f3;
+}
+
+.callout__title {
+  margin: 0;
+  font-size: 1.35rem;
+  line-height: 1.25;
+}
+
+.callout__note { margin: 0.2rem 0 0; }
+
+/* Inverted, so the button stands out from the block it sits on. */
+.callout__button,
+.callout__button:hover {
+  background: #fff;
+  color: var(--accent-dark);
+}
+
+.callout__button:hover { background: var(--tint); }
+
 /* ---- Sections ---- */
 .section { margin-bottom: 2.75rem; }
 
