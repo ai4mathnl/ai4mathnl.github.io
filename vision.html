@@ -23,10 +23,8 @@ image: /assets/img/social-card.png
   <div class="draft-notice" role="note">
     <p class="draft-notice__title">This is a draft for discussion</p>
     <p>
-      This text is not a final statement. Its purpose is to serve as input for
-      discussion at the <a href="{{ '/' | relative_url }}">AI4Math workshop</a> on
-      {{ site.workshop.date }}. It will be revised on the basis of the feedback and
-      discussions there, and a final version will be published after the workshop.
+      It will be revised on the basis of the feedback and discussions at the
+      <a href="{{ '/' | relative_url }}">AI4Math workshop</a> on {{ site.workshop.date }}.
     </p>
   </div>
   {%- endif %}
@@ -46,10 +44,7 @@ image: /assets/img/social-card.png
   </p>
 </header>
 
-<article class="vision{% if site.vision_draft %} vision--draft{% endif %}">
-  {%- if site.vision_draft %}
-  <p class="vision__status">Draft &mdash; input for discussion at the workshop, not a final statement</p>
-  {%- endif %}
+<article class="vision">
   {% include vision-body.html %}
 </article>
 

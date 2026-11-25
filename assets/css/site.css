@@ -323,9 +323,8 @@ a:hover { color: var(--accent-dark); }
 }
 
 /* Draft status. Deliberately the one warm colour on the site, so that it
-   cannot be mistaken for decoration: a tag in the title, a notice under it,
-   and a band across the top of the document itself for anyone who arrives
-   by a link into the text. All three hang on vision_draft in _config.yml. */
+   cannot be mistaken for decoration: a tag in the title and a notice under
+   it. Both hang on vision_draft in _config.yml. */
 .draft-tag {
   display: inline-block;
   vertical-align: 0.2em;
@@ -358,17 +357,6 @@ a:hover { color: var(--accent-dark); }
 }
 
 .draft-notice a { color: inherit; font-weight: 600; }
-
-.vision--draft { border-top: 4px solid #b45309; }
-
-.vision__status {
-  margin: 0 0 1.5rem;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #b45309;
-}
 
 .vision-authors {
   list-style: none;
@@ -422,8 +410,7 @@ button.button {
 .vision-intro p:first-child { margin-top: 0; }
 
 .vision-section { margin-top: 3rem; }
-.vision-section:first-child,
-.vision__status + .vision-section { margin-top: 0; }
+.vision-section:first-child { margin-top: 0; }
 
 .vision-section > h2 {
   margin: 0 0 0.9rem;
