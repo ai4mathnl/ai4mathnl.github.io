@@ -194,13 +194,6 @@ a:hover { color: var(--accent-dark); }
   border-bottom: 1px solid var(--border);
 }
 
-.section__note {
-  margin: -0.3rem 0 1rem;
-  font-size: 0.85rem;
-  font-style: italic;
-  color: var(--muted);
-}
-
 /* ---- Programme ---- */
 .programme {
   list-style: none;

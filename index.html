@@ -77,7 +77,6 @@ image: /assets/img/social-card.png
 
 <section class="section" id="programme">
   <h2>Programme</h2>
-  <p class="section__note">Provisional &mdash; details to be announced.</p>
   <ol class="programme">
     {%- for item in site.data.program -%}
       <li class="programme__item{% if item.kind == 'break' %} programme__item--break{% endif %}">
