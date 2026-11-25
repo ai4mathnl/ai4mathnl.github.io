@@ -592,6 +592,8 @@ button.button {
 }
 
 .vision-notes ol { margin: 0; padding-left: 1.6em; }
+/* Notes may spell out long URLs, which must not push the page wide. */
+.vision-notes li { overflow-wrap: anywhere; }
 .vision-notes li + li { margin-top: 0.4rem; }
 .vision-notes__back { text-decoration: none; }
 
