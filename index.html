@@ -84,7 +84,8 @@ image: /assets/img/social-card.png
         <span class="programme__time">{{ item.time }}</span>
         <span class="programme__body">
           <span class="programme__title">
-            {%- if item.url -%}<a href="{{ item.url | relative_url }}">{{ item.title }}</a>{%- else -%}{{ item.title }}{%- endif -%}
+            {{- item.title -}}
+            {%- if item.link_text %} <a href="{{ item.url | relative_url }}">{{ item.link_text }}</a>{% endif -%}
           </span>
           {%- if item.speaker -%}<span class="programme__speaker">{{ item.speaker }}</span>{%- endif -%}
           {%- if item.note -%}<span class="programme__note">{{ item.note }}</span>{%- endif -%}
