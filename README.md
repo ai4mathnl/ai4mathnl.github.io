@@ -61,7 +61,8 @@ python3 tools/vision_to_site.py path/to/vision.tex
 
 While `vision_draft` in `_config.yml` is true, the page says prominently that
 the text is a draft for discussion at the workshop. For the final version, set
-it to false and drop "Draft" from the title in `vision.html`'s front matter.
+it to false and take "draft" out of the description in `vision.html`'s front
+matter.
 
 Commit the three files the script writes: `_includes/vision-body.html`,
 `_data/vision.json` (title, authors, date) and `assets/vision.pdf`. The date on
