@@ -323,21 +323,8 @@ a:hover { color: var(--accent-dark); }
 }
 
 /* Draft status. Deliberately the one warm colour on the site, so that it
-   cannot be mistaken for decoration: a tag in the title and a notice under
-   it. Both hang on vision_draft in _config.yml. */
-.draft-tag {
-  display: inline-block;
-  vertical-align: 0.2em;
-  margin-right: 0.3rem;
-  padding: 0.1rem 0.6rem;
-  border-radius: 6px;
-  background: #b45309;
-  color: #fff;
-  font-size: 0.55em;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
+   cannot be mistaken for decoration. Shown while vision_draft in _config.yml
+   is true. */
 .draft-notice {
   margin: 0 0 1.5rem;
   padding: 0.8rem 1rem;

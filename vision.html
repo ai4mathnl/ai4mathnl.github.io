@@ -15,9 +15,7 @@ image: /assets/img/social-card.png
 
 <header class="hero">
   <p class="hero__kicker"><a class="hero__back" href="{{ '/' | relative_url }}">{{ site.title }}</a></p>
-  <h1 class="hero__title">
-    {%- if site.vision_draft -%}<span class="draft-tag">Draft</span> {% endif -%}
-    {{ vision.title }}</h1>
+  <h1 class="hero__title">{{ vision.title }}</h1>
   <p class="hero__subtitle">{{ vision.subtitle }}</p>
   {%- if site.vision_draft %}
   <div class="draft-notice" role="note">
