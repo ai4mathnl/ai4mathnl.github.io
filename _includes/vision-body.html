@@ -1,0 +1,332 @@
+<!-- Generated from vision.tex by tools/vision_to_site.py. Do not edit: rerun the script instead. -->
+{% raw %}
+<section class="vision-intro">
+<p>2026 will likely be remembered as the year in which mathematics changed. Several long-standing problems, some of which had resisted generations of effort, have been resolved with substantial help from AI systems, and research-level proofs are now produced at a pace and cost that would have seemed implausible only a few years ago. <mark class="vision-note">Christoph: [TODO: name 3 concrete results here, with references]</mark>. The question is no longer whether AI will be part of the future of mathematics, but what kind of mathematics we want to build with it. It is tempting to respond either with uncritical enthusiasm or with defensive alarm. This document aims for a third path: a constructive vision for doing mathematics well in an era of capable AI systems, offering a narrative to ourselves and, just as importantly, to the next generation of mathematicians.</p>
+<details class="fold">
+<summary>Read the full introduction</summary>
+<div class="fold__body">
+<p>Terence Tao has given this moment a useful name. For most of its history, mathematics operated under <em>proof scarcity</em>: a correct proof of a hard result was rare and costly, and our journals, careers, prizes and PhD programs grew up around rewarding its production. With AI we are entering an era of <em>proof abundance</em>, and Tao calls on the field to move deliberately towards a ‘Math&nbsp;2.0’, in which AI is used to strengthen human understanding rather than to bypass it.<sup class="noteref"><a href="#note-1" id="noteref-1" aria-label="Note 1">1</a></sup> Solving problems, in this view, was always a proxy for deeper goals: insight, new concepts, and maps of the mathematical landscape that others can use. When proofs become abundant, those deeper goals move to the center: digesting and explaining results, exploring what lies around a theorem, building shared formal libraries, and collaborating at scales that were previously out of reach. The main bottleneck is no longer technology, but our imagination.</p>
+<p>This relationship also runs the other way. AI is itself heavily built on mathematics, and whether an AI system can be trusted, and what it provably can and cannot do, are mathematical questions. The need for deep mathematical expertise is therefore growing, not shrinking.</p>
+<p>Whatever role AI comes to play in generating arguments or checking details, the responsibility for understanding a result, judging its value, and standing behind its correctness has to remain human. This is what keeps mathematics valuable for other disciplines as well as society and is something students and researchers want to do. The joy of discovery, the individual voice and taste that shape a research program, and the character of a community that thinks and argues together are not a bonus. They are why our discipline is worth teaching and why its results are convincing and worth trusting. That trust has stakes beyond our education or research. Wherever mathematical expertise informs consequential decisions, in industry, in policy, anywhere the reasoning has to hold up, the result cannot simply be an AI’s output; it needs a human who understands it well enough to transparently represent and communicate the added value.</p>
+<p>Many students are worried about what is left for them if a machine can already reason like a PhD student. Our answer is: a great deal, and in some ways more than before. For the first time in generations, the habits and institutions of mathematics are open for redesign, and the people entering the field now will be the ones who decide what Math&nbsp;2.0 looks like: which questions are worth asking, how results are digested and communicated, how trust is established, and how the joy of doing mathematics is preserved. This future does not have to be decided for us elsewhere. As a community, we can shape it actively ourselves.</p>
+<p>Building on the <a href="https://leidendeclaration.ai/">Leiden Declaration on Artificial Intelligence and Mathematics</a>, this document is a starting point for discussion within the Dutch mathematical community, moving from what remains uniquely human, via the new horizons AI opens up, to the changes needed in training, publishing and infrastructure.</p>
+</div>
+</details>
+</section>
+<section class="vision-section" id="affirm-the-humanity-of-mathematics">
+<h2><span class="vision-section__number">1</span> Affirm the humanity of mathematics</h2>
+<div class="vision-soundbite">
+<p>Value, trust, teaching and community in mathematics are uniquely human.</p>
+</div>
+<section class="statement" id="value-comes-from-the-effect-on-people">
+<span class="statement__number" aria-hidden="true">1.1</span>
+<h3 class="statement__title"><span class="visually-hidden">1.1 </span>Value comes from the effect on people</h3>
+<div class="statement__claim">
+<p>A mathematical result acquires value through its effect on the mathematical community and on society. AI working in a vacuum cannot produce such value by itself.</p>
+</div>
+<details class="fold">
+<summary>Details and recommendations</summary>
+<div class="fold__body">
+<div class="statement__details">
+<p>For example, the recent AI-assisted solution for the Navier-Stokes millennium prize problem is exciting not because the problem was difficult – there exist many difficult, but uninteresting problems – but because of a respected community of people who care deeply about this particular mathematical question, and who understand its significance in light of a long cultural tradition.</p>
+</div>
+<div class="statement__advice">
+<h4>Recommendations</h4>
+<ol>
+<li>Human mathematicians must curate the canon of mathematics: what is ‘interesting’ and why?</li>
+<li>Mathematics is infinite, and even with AI we cannot explore all of it. Humans must determine at which mathematical questions to direct our limited resources.</li>
+<li>Digesting and communicating (AI-assisted) mathematical results will become much more important. We should recognize this early, and award such work with higher status.</li>
+<li>Humans must decide which concepts and techniques to teach our students.</li>
+</ol>
+</div>
+</div>
+</details>
+</section>
+<section class="statement" id="trust-and-accountability-rely-on-people">
+<span class="statement__number" aria-hidden="true">1.2</span>
+<h3 class="statement__title"><span class="visually-hidden">1.2 </span>Trust and accountability rely on people</h3>
+<div class="statement__claim">
+<p>Only human mathematicians can hold trust and be accountable to society when choosing mathematical models and trade-offs in high-stakes applications.</p>
+</div>
+<details class="fold">
+<summary>Details and recommendations</summary>
+<div class="fold__body">
+<div class="statement__details">
+<p>Mathematics makes things reliable. For instance, when securing communication with cryptography or testing vaccine effectiveness with statistics. But this often involves modeling choices, trade-offs between conflicting interests, and pragmatic leaps from mathematical theory to practice. These steps necessarily require human experts, because we understand when and how we can trust humans, and we have societal mechanisms to hold them accountable. None of these mechanisms exist for AI, which therefore cannot hold responsibility.</p>
+</div>
+<div class="statement__advice">
+<h4>Recommendations</h4>
+<ol>
+<li>Modeling choices and trade-offs between conflicting interests and objectives must be done by humans.</li>
+<li>We need human experts who deeply understand the math underlying high-stakes applications; otherwise they cannot take responsibility, or communicate effectively.</li>
+</ol>
+</div>
+</div>
+</details>
+</section>
+<section class="statement" id="teaching-requires-human-contact">
+<span class="statement__number" aria-hidden="true">1.3</span>
+<h3 class="statement__title"><span class="visually-hidden">1.3 </span>Teaching requires human contact</h3>
+<div class="statement__claim">
+<p>Students need personal contact with teachers for guidance and inspiration, and connections with fellow students for well-being.</p>
+</div>
+<details class="fold">
+<summary>Details and recommendations</summary>
+<div class="fold__body">
+<div class="statement__details">
+<p>If designed well, personalized AI tutors hold great promise for learning. But we have seen during the Covid pandemic how students suffered from studying remotely, without direct contact with fellow students or with teachers to motivate and inspire them. This shows that learning is not just a technical activity, but crucially relies on community and human interaction.</p>
+</div>
+<div class="statement__advice">
+<h4>Recommendations</h4>
+<ol>
+<li>Experiment with AI-supported learning, but do not let it replace human contact with teachers.</li>
+<li>Make regular student interaction with other students an explicit goal in teaching programs.</li>
+</ol>
+</div>
+</div>
+</details>
+</section>
+<section class="statement" id="human-agency-in-mathematics-rests-on-human-communities">
+<span class="statement__number" aria-hidden="true">1.4</span>
+<h3 class="statement__title"><span class="visually-hidden">1.4 </span>Human agency in mathematics rests on human communities</h3>
+<div class="statement__claim">
+<p>Safeguarding human agency in the context of AI relies crucially on people and the vitality of the mathematical communities that support them.</p>
+</div>
+<details class="fold">
+<summary>Details and recommendations</summary>
+<div class="fold__body">
+<div class="statement__details">
+<p>There are many mathematical subcommunities that are vital to the health of mathematics: teachers, students, researchers, entrepreneurs, hobbyists, etc. They are all needed to shape the future of mathematics. Communication, personal relationships, and feeling connected are extra important in times of change.</p>
+</div>
+<div class="statement__advice">
+<h4>Recommendations</h4>
+<ol>
+<li>Organize community events to discuss and digest changes caused by AI.</li>
+<li>Ensure broad representation, including from groups that are often underrepresented.</li>
+<li>When making (policy) changes: consider how they will change incentives and how this will impact various groups and subcommunities. Pay particular attention to the effect on underrepresented groups.</li>
+</ol>
+</div>
+</div>
+</details>
+</section>
+</section>
+<section class="vision-section" id="new-horizons-for-mathematics-with-ai">
+<h2><span class="vision-section__number">2</span> New horizons for mathematics with AI</h2>
+<div class="vision-soundbite">
+<p>As AI changes the way we do mathematics, exciting new opportunities emerge for teachers, mathematical engineers, and researchers.</p>
+</div>
+<section class="statement" id="teachers-can-be-empowered-by-ai">
+<span class="statement__number" aria-hidden="true">2.1</span>
+<h3 class="statement__title"><span class="visually-hidden">2.1 </span>Teachers can be empowered by AI</h3>
+<div class="statement__claim">
+<p>AI already makes it easy to create interactive animations and custom presentation materials. There is also much potential to use it to automate routine parts of grading, and to develop personalized AI-assisted tutoring. When used with good judgment, AI can make teaching better, and the teacher’s job more enjoyable, allowing them to spend more time with students.</p>
+</div>
+<details class="fold">
+<summary>Recommendations</summary>
+<div class="fold__body">
+<div class="statement__advice">
+<ol>
+<li>Take advantage of AI tools to easily develop customized teaching materials that are more fun and more engaging.</li>
+<li>Pioneer AI tutors that support learning, e.g. via custom AI personas that draw on all class reading materials but nudge students to address gaps in their understanding instead of giving away answers too easily.</li>
+<li>Develop reliable ways to use AI to support straight-forward parts of grading, e.g. for grading exercises that do not require human judgment to evaluate.</li>
+</ol>
+</div>
+</div>
+</details>
+</section>
+<section class="statement" id="mathematical-engineers-can-be-empowered-by-ai">
+<span class="statement__number" aria-hidden="true">2.2</span>
+<h3 class="statement__title"><span class="visually-hidden">2.2 </span>Mathematical engineers can be empowered by AI</h3>
+<div class="statement__claim">
+<p>Mathematicians in industry can apply a broader set of mathematical techniques with AI, and tap into new research more easily.</p>
+</div>
+<details class="fold">
+<summary>Recommendations</summary>
+<div class="fold__body">
+<div class="statement__advice">
+<ol>
+<li>Train students and retrain working mathematical engineers to develop productive AI skills that empower them. See also point <a href="#ai-requires-new-skills">3.2</a>.</li>
+</ol>
+</div>
+</div>
+</details>
+</section>
+<section class="statement" id="mathematical-researchers-can-be-empowered-by-ai">
+<span class="statement__number" aria-hidden="true">2.3</span>
+<h3 class="statement__title"><span class="visually-hidden">2.3 </span>Mathematical researchers can be empowered by AI</h3>
+<div class="statement__claim">
+<p>In the short term AI disrupts many practices of mathematical research. But in the long term it can open up a wealth of new mathematical applications, allow us to explore new frontiers of understanding, create opportunities for young people to reshape how we work, and make the field more self-aware about the many different reasons for doing mathematics.</p>
+</div>
+<details class="fold">
+<summary>Recommendations</summary>
+<div class="fold__body">
+<div class="statement__advice">
+<ol>
+<li>Technical work that can easily be done by AI with a single prompt will not remain publishable by itself. It will still be worthwhile to do such work by hand to build up deep domain understanding and for enjoyment, but not as final scientific output. Focus either on theory building and the conceptual part of research or on technical questions (old or new) that are hard even with AI support.</li>
+<li>Recognize that AI is not magic, so new exciting mathematical questions will come up that cannot be solved even with AI support. Seize opportunities to identify and explore such new questions.</li>
+<li>In some parts of applied mathematics, developing mathematical theory gives a deep understanding, but is much slower than trying out ideas in experiments. For instance, in machine learning, this has led to a widening gap between mathematical theory and the techniques used in practice. Exploit faster theory development with AI to close such gaps.</li>
+<li>With AI tools, new mathematical theory can be turned into proof-of-concept demonstrations with a high technological readiness level much more quickly. Take advantage of such tools to open up a wide range of new mathematical applications, with corresponding funding opportunities.</li>
+<li>We are going through a time of change: many more people than ever are open to changing old processes and habits. Point out to young researchers that this creates opportunities for them to shape the future of how we work.</li>
+<li>As argued by <a href="https://arxiv.org/abs/2608.16753">Tao</a>, AI developments force us to separate the many reasons for doing mathematics. This effort is worth undertaking regardless of the role of AI. Russell’s paradox and Gödel’s incompleteness theorems similarly forced mathematicians to reexamine foundational assumptions that had previously been left implicit, and mathematics emerged stronger for it.</li>
+</ol>
+</div>
+</div>
+</details>
+</section>
+</section>
+<section class="vision-section" id="skills-training-and-evaluation">
+<h2><span class="vision-section__number">3</span> Skills, training and evaluation</h2>
+<div class="vision-soundbite">
+<p>Update training and evaluation to ensure that AI amplifies human mathematical ability.</p>
+</div>
+<section class="statement" id="deep-mathematical-insight-remains-crucial">
+<span class="statement__number" aria-hidden="true">3.1</span>
+<h3 class="statement__title"><span class="visually-hidden">3.1 </span>Deep mathematical insight remains crucial</h3>
+<div class="statement__claim">
+<p>Deep understanding of a mathematical topic is the foundation of being a mathematician. But we can no longer judge understanding from written work (papers, PhD theses) alone. Nor does producing such work guarantee that the author builds up deep insight.</p>
+</div>
+<details class="fold">
+<summary>Recommendations</summary>
+<div class="fold__body">
+<div class="statement__advice">
+<ol>
+<li>Evaluate mathematical insight more thoroughly during the hiring process, for instance by an in-depth discussion about an applicant’s recent work.</li>
+</ol>
+</div>
+</div>
+</details>
+</section>
+<section class="statement" id="ai-requires-new-skills">
+<span class="statement__number" aria-hidden="true">3.2</span>
+<h3 class="statement__title"><span class="visually-hidden">3.2 </span>AI requires new skills</h3>
+<div class="statement__claim">
+<p>Using AI effectively requires many additional skills. This extends beyond technical proficiency to, for instance, staying in control, and effective workflows that include human learning.</p>
+</div>
+<details class="fold">
+<summary>Recommendations</summary>
+<div class="fold__body">
+<div class="statement__advice">
+<ol>
+<li>Include both technical AI skills and self-reflection on AI use as mandatory components in the teaching curriculum. This includes, for instance, preventing cognitive offloading of valuable learning opportunities to AI, and exercising human judgment in the presence of AI.</li>
+<li>Organize seminars about AI skills for mathematicians, mathematical engineers and mathematics teachers in all sectors.</li>
+</ol>
+</div>
+</div>
+</details>
+</section>
+<section class="statement" id="revalue-communication-and-digestion">
+<span class="statement__number" aria-hidden="true">3.3</span>
+<h3 class="statement__title"><span class="visually-hidden">3.3 </span>Revalue communication and digestion</h3>
+<div class="statement__claim">
+<p>AI use will rapidly increase the amount of ‘dark math’: mathematical results that are proven somewhere, but that nobody understands or knows about.<sup class="noteref"><a href="#note-2" id="noteref-2" aria-label="Note 2">2</a></sup> Extracting important insights and communicating them will therefore become increasingly important.</p>
+</div>
+<details class="fold">
+<summary>Recommendations</summary>
+<div class="fold__body">
+<div class="statement__advice">
+<ol>
+<li>Place higher value on digestion and communication of mathematical results in hiring decisions.</li>
+<li>Extend the concept of mathematical discovery to digesting dark math.</li>
+</ol>
+</div>
+</div>
+</details>
+</section>
+<section class="statement" id="phd-programs-need-to-be-significantly-updated">
+<span class="statement__number" aria-hidden="true">3.4</span>
+<h3 class="statement__title"><span class="visually-hidden">3.4 </span>PhD programs need to be significantly updated</h3>
+<div class="statement__claim">
+<p>The goal of a PhD is to become an independent mathematical researcher. In the past we have evaluated this mostly based on the ability to write a good PhD thesis, but this is no longer sufficient. A PhD has always been about a broader set of skills, but we now need to articulate these skills more explicitly, and significantly update our processes to ensure PhD students acquire them.</p>
+</div>
+<details class="fold">
+<summary>Recommendations</summary>
+<div class="fold__body">
+<div class="statement__advice">
+<ol>
+<li>Take advantage of existing proposals, for instance by the <a href="https://cmsa.fas.harvard.edu/aimathphd_summit/">Harvard summit on PhD math education in the age of AI</a>.</li>
+</ol>
+</div>
+</div>
+</details>
+</section>
+</section>
+<section class="vision-section" id="overhaul-publishing-and-reviewing">
+<h2><span class="vision-section__number">4</span> Overhaul publishing and reviewing</h2>
+<div class="vision-soundbite">
+<p>Experiment boldly with reforms of paper and grant reviewing.</p>
+</div>
+<section class="statement" id="the-current-paper-review-system-is-untenable">
+<span class="statement__number" aria-hidden="true">4.1</span>
+<h3 class="statement__title"><span class="visually-hidden">4.1 </span>The current paper review system is untenable</h3>
+<div class="statement__claim">
+<p>AI makes writing a paper much easier. This is causing a massive increase in the number of submissions. Existing review systems must adapt to avoid getting overloaded.</p>
+</div>
+<details class="fold">
+<summary>Recommendations</summary>
+<div class="fold__body">
+<div class="statement__advice">
+<ol>
+<li>Experiment with new reviewing systems to discover what works and what does not.</li>
+<li>Learn from reviewing experiments in other fields (for instance in machine learning and theoretical computer science, where increasing numbers of submissions has been a problem for a longer time). See, for instance, <a href="https://acm-stoc.org/stoc2027/stoc2027-cfp.html">STOC 2027</a>, which combines several experimental features.</li>
+<li>Keep writing results up in human-readable papers or other human-accessible forms: results that are accessible only through AI mediation lock us into using a rapidly changing technology with an unpredictable future.</li>
+<li>Insist on high standards of rigor and communication. Standards can go up if AI support is used appropriately, for example via automatic Lean formalizations.</li>
+<li>Require human authors that take responsibility for paper quality, significance and attribution.</li>
+<li>For now, require AI use statements to make the role of AI explicitly visible.</li>
+<li>Use the current momentum for reform to switch to open access publishing.</li>
+</ol>
+</div>
+</div>
+</details>
+</section>
+<section class="statement" id="the-current-grant-review-system-is-untenable">
+<span class="statement__number" aria-hidden="true">4.2</span>
+<h3 class="statement__title"><span class="visually-hidden">4.2 </span>The current grant review system is untenable</h3>
+<div class="statement__claim">
+<p>AI makes writing a grant proposal much easier. This is causing a massive increase in the number of submissions. Existing review systems must adapt to avoid getting overloaded.</p>
+</div>
+<details class="fold">
+<summary>Recommendations</summary>
+<div class="fold__body">
+<div class="statement__advice">
+<ol>
+<li>Experiment more with new reviewing systems to discover what works and what does not.</li>
+</ol>
+</div>
+</div>
+</details>
+</section>
+</section>
+<section class="vision-section" id="invest-in-open-and-secure-ai-infrastructure">
+<h2><span class="vision-section__number">5</span> Invest in open and secure AI infrastructure</h2>
+<div class="vision-soundbite">
+<p>Nationally supported AI research infrastructure is needed for security and to mitigate dependencies on American tech companies.</p>
+</div>
+<section class="statement" id="set-up-agentic-ai-with-api-access-via-surf-npuls">
+<span class="statement__number" aria-hidden="true">5.1</span>
+<h3 class="statement__title"><span class="visually-hidden">5.1 </span>Set up agentic AI with API access via SURF/Npuls</h3>
+<div class="statement__claim">
+<p>Professional mathematicians require agentic AI rather than just simple chat interfaces. This applies not just for developing new proofs and counterexamples, but also for automatic proof formalization in Lean, programming, creating figures and presentations, checking informal proofs, mathematical writing, project management, and many other important use cases of AI. Npuls and SURF have the expertise to support this, with attention for data management agreements, and with support to easily switch between AI models, which mitigates dependencies on American tech companies. Their existing <a href="https://npuls.nl/edugenai">EduGenAI</a> and <a href="https://www.surf.nl/en/themes/artificial-intelligence/projects-and-collaborations/ai-hub">AI Hub</a> initiatives should be extended and strengthened for this purpose, with mathematics as a pioneering use case that paves the way for other scientific disciplines to soon follow.</p>
+</div>
+<details class="fold">
+<summary>Recommendations</summary>
+<div class="fold__body">
+<div class="statement__advice">
+<ol>
+<li>Affiliated universities have a strong voice in the priorities for EduGenAI and the AI Hub. They should prioritize supporting API access that can be used for agentic AI by individual researchers, with support extended to include the top (commercial) models for mathematical proof generation.</li>
+<li>There are currently large differences between universities in whether they support agentic AI access. All mathematics research institutes should provide their researchers with agentic AI access to state-of-the-art models.</li>
+<li>Running agentic AI locally without proper precautions can cause significant IT security risks. Organize centralized development of IT best practices for agentic AI at a national level.</li>
+<li>Commercial tech companies currently sponsor model access as part of their growth strategy. Arrange AI funding now for the time when the sponsoring ends and prices may go up significantly.</li>
+</ol>
+</div>
+</div>
+</details>
+</section>
+</section>
+<section class="vision-notes" id="notes">
+<h2>Notes</h2>
+<ol>
+<li id="note-1">T.&nbsp;Tao,<a href="https://www.nature.com/articles/d41586-026-03389-1">Can maths survive AI? Fields medallist Terence Tao calls for a ‘Maths 2.0’ world</a>, <em>Nature</em>, World View, October 2026; see also his <a href="https://teorth.github.io/tao-web/slides/math-2-0-caltech-2026.pdf">Math&nbsp;2.0 lecture</a> (Caltech, October 2026) and <a href="https://arxiv.org/abs/2608.16753">Mathematics in the age of AI</a>. <a class="vision-notes__back" href="#noteref-1" aria-label="Back to the text">↩︎</a></li>
+<li id="note-2">By analogy with ‘dark matter’ in astronomy <a class="vision-notes__back" href="#noteref-2" aria-label="Back to the text">↩︎</a></li>
+</ol>
+</section>
+{% endraw %}

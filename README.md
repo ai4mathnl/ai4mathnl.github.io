@@ -17,6 +17,7 @@ file at the repository root in step.
 | Organisers | `_data/organisers.yml` |
 | Page text | `index.html` |
 | Registration page | `register.html` (served at `/register/`) |
+| Vision document page | `vision.html` (served at `/vision/`); its content is generated, see below |
 | Styling | `assets/css/style.css` |
 | Calendar file offered by "Add to calendar" | `calendar.ics` (reads `_config.yml`) |
 | Logos, icons, sharing card | `assets/img/` |
@@ -46,6 +47,27 @@ CWI also publishes a copy of this page at
 <https://www.cwi.nl/en/research/computational-imaging/events/ai4math-workshop-shaping-the-future-of-mathematics-with-ai/>.
 It is maintained separately, so changes to the text here have to be passed on
 to CWI by hand.
+
+## Updating the vision document
+
+`/vision/` shows the vision document that is written in LaTeX in a separate
+repository. Its text is never edited here: `tools/vision_to_site.py` converts
+`vision.tex` and copies the compiled PDF that the page offers for download.
+Compile `vision.tex` first, then run:
+
+```bash
+python3 tools/vision_to_site.py path/to/vision.tex
+```
+
+and commit the three files it writes: `_includes/vision-body.html`,
+`_data/vision.json` (title, authors, date) and `assets/vision.pdf`. The date on
+the page is the day the PDF was compiled.
+
+The script understands only the LaTeX that the document uses, and stops with a
+message when it meets anything else, so that nothing reaches the page garbled.
+It also stops at editorial notes (`\tim{...}`, `\christoph{...}`); pass
+`--draft` to show them highlighted on the page for a preview that is not
+published. Footnotes are collected in a "Notes" list at the end of the page.
 
 ## Local preview
 

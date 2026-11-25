@@ -1,0 +1,40 @@
+---
+layout: default
+title: "AIM 2027 Vision for the Netherlands"
+description: >-
+  Shaping the Future of Mathematics with AI: a vision for the Netherlands by
+  AIM, the Dutch network for AI and mathematics.
+permalink: /vision/
+image: /assets/img/social-card.png
+---
+{%- comment -%}
+  The document itself, its title, authors and date, and the PDF are generated
+  from vision.tex by tools/vision_to_site.py. Edit the text there, not here.
+{%- endcomment -%}
+{%- assign vision = site.data.vision -%}
+
+<header class="hero">
+  <p class="hero__kicker"><a class="hero__back" href="{{ '/' | relative_url }}">{{ site.title }}</a></p>
+  <h1 class="hero__title">{{ vision.title }}</h1>
+  <p class="hero__subtitle">{{ vision.subtitle }}</p>
+  <ul class="vision-authors">
+    {%- for author in vision.authors -%}
+      <li>
+        <span class="vision-authors__name">{{ author.name }}</span>
+        {%- if author.role != "" -%}<span class="vision-authors__role">{{ author.role }}</span>{%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ul>
+  <p class="vision-date">{{ vision.date }}</p>
+  <p class="hero__actions">
+    <a class="button" href="{{ '/assets/vision.pdf' | relative_url }}">Download PDF</a>
+    {%- comment %} Shown by vision.js: without scripts it could not do anything. {% endcomment -%}
+    <button class="button button--quiet" type="button" data-vision-toggle hidden>Expand all</button>
+  </p>
+</header>
+
+<article class="vision">
+  {% include vision-body.html %}
+</article>
+
+<script src="{{ '/assets/js/vision.js' | relative_url }}" defer></script>
