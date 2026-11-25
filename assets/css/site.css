@@ -167,15 +167,6 @@ a:hover { color: var(--accent-dark); }
 
 .callout__text { flex: 1 1 16rem; }
 
-.callout__kicker {
-  margin: 0 0 0.15rem;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #e8f1f8;
-}
-
 .callout__title {
   margin: 0;
   font-size: 1.35rem;
