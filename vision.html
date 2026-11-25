@@ -1,9 +1,9 @@
 ---
 layout: default
-title: "AIM 2027 Vision for the Netherlands"
+title: "Draft AIM 2027 Vision for the Netherlands"
 description: >-
-  Shaping the Future of Mathematics with AI: a vision for the Netherlands by
-  AIM, the Dutch network for AI and mathematics.
+  Shaping the Future of Mathematics with AI: a draft vision for the
+  Netherlands by AIM, as input for discussion at the AI4Math workshop.
 permalink: /vision/
 image: /assets/img/social-card.png
 ---
@@ -15,8 +15,21 @@ image: /assets/img/social-card.png
 
 <header class="hero">
   <p class="hero__kicker"><a class="hero__back" href="{{ '/' | relative_url }}">{{ site.title }}</a></p>
-  <h1 class="hero__title">{{ vision.title }}</h1>
+  <h1 class="hero__title">
+    {%- if site.vision_draft -%}<span class="draft-tag">Draft</span> {% endif -%}
+    {{ vision.title }}</h1>
   <p class="hero__subtitle">{{ vision.subtitle }}</p>
+  {%- if site.vision_draft %}
+  <div class="draft-notice" role="note">
+    <p class="draft-notice__title">This is a draft for discussion</p>
+    <p>
+      This text is not a final statement. Its purpose is to serve as input for
+      discussion at the <a href="{{ '/' | relative_url }}">AI4Math workshop</a> on
+      {{ site.workshop.date }}. It will be revised on the basis of the feedback and
+      discussions there, and a final version will be published after the workshop.
+    </p>
+  </div>
+  {%- endif %}
   <ul class="vision-authors">
     {%- for author in vision.authors -%}
       <li>
@@ -27,13 +40,16 @@ image: /assets/img/social-card.png
   </ul>
   <p class="vision-date">{{ vision.date }}</p>
   <p class="hero__actions">
-    <a class="button" href="{{ '/assets/vision.pdf' | relative_url }}">Download PDF</a>
+    <a class="button" href="{{ '/assets/vision.pdf' | relative_url }}">Download {% if site.vision_draft %}draft {% endif %}PDF</a>
     {%- comment %} Shown by vision.js: without scripts it could not do anything. {% endcomment -%}
     <button class="button button--quiet" type="button" data-vision-toggle hidden>Expand all</button>
   </p>
 </header>
 
-<article class="vision">
+<article class="vision{% if site.vision_draft %} vision--draft{% endif %}">
+  {%- if site.vision_draft %}
+  <p class="vision__status">Draft &mdash; input for discussion at the workshop, not a final statement</p>
+  {%- endif %}
   {% include vision-body.html %}
 </article>
 

@@ -59,7 +59,11 @@ Compile `vision.tex` first, then run:
 python3 tools/vision_to_site.py path/to/vision.tex
 ```
 
-and commit the three files it writes: `_includes/vision-body.html`,
+While `vision_draft` in `_config.yml` is true, the page says prominently that
+the text is a draft for discussion at the workshop. For the final version, set
+it to false and drop "Draft" from the title in `vision.html`'s front matter.
+
+Commit the three files the script writes: `_includes/vision-body.html`,
 `_data/vision.json` (title, authors, date) and `assets/vision.pdf`. The date on
 the page is the day the PDF was compiled.
 
