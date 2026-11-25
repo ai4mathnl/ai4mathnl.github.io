@@ -163,6 +163,17 @@ a:hover { color: var(--accent-dark); }
   border-radius: 8px;
   background: var(--accent);
   color: #fff;
+  text-decoration: none;
+}
+
+.callout:hover {
+  background: var(--accent-dark);
+  color: #fff;
+}
+
+.callout:focus-visible {
+  outline: 3px solid var(--accent-dark);
+  outline-offset: 3px;
 }
 
 .callout__text { flex: 1 1 16rem; }
@@ -181,8 +192,6 @@ a:hover { color: var(--accent-dark); }
   background: #fff;
   color: var(--accent-dark);
 }
-
-.callout__button:hover { background: var(--tint); }
 
 /* ---- Sections ---- */
 .section { margin-bottom: 2.75rem; }

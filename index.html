@@ -43,13 +43,14 @@ image: /assets/img/social-card.png
 </header>
 
 {%- comment %} The one thing on this page that should not be overlooked. {% endcomment %}
-<aside class="callout" aria-labelledby="vision-callout">
+{%- comment %} The whole block is the link; the "button" inside it is only a label. {% endcomment %}
+<a class="callout" href="{{ '/vision/' | relative_url }}">
   <div class="callout__text">
-    <h2 class="callout__title" id="vision-callout">{% if site.vision_draft %}Draft vision{% else %}Vision{% endif %} document</h2>
+    <h2 class="callout__title">{% if site.vision_draft %}Draft vision{% else %}Vision{% endif %} document</h2>
     <p class="callout__note">The starting point for the discussions at the workshop.</p>
   </div>
-  <a class="button callout__button" href="{{ '/vision/' | relative_url }}">Read the {% if site.vision_draft %}draft {% endif %}vision</a>
-</aside>
+  <span class="button callout__button">Read the {% if site.vision_draft %}draft {% endif %}vision</span>
+</a>
 
 <section class="section" id="about">
   <h2>About the workshop</h2>
