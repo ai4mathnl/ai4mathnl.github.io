@@ -374,6 +374,7 @@ button.button {
 .vision-intro p:first-child { margin-top: 0; }
 
 .vision-section { margin-top: 3rem; }
+.vision-section:first-child { margin-top: 0; }
 
 .vision-section > h2 {
   margin: 0 0 0.9rem;

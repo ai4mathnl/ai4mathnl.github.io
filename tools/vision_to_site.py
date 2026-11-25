@@ -348,12 +348,12 @@ class Converter:
     def document(self, body):
         """Parse the document body into the introduction and the sections."""
         intro, sections, i = [], [], 0
-        block = re.compile(r"\\section\*?\s*\{|\\begin\{(\w+)\}")
+        block = re.compile(r"\\section(\*?)\s*\{|\\begin\{(\w+)\}")
         while True:
             m = block.search(body, i)
             # A list is part of the running text around it.
-            while m and m.group(1) in LISTS:
-                _, past = env_end(body, m.end(), m.group(1))
+            while m and m.group(2) in LISTS:
+                _, past = env_end(body, m.end(), m.group(2))
                 m = block.search(body, past)
             loose = self.blocks(body[i:m.start() if m else len(body)])
             if sections:
@@ -363,17 +363,21 @@ class Converter:
             if not m:
                 break
 
-            if m.group(1) is None:
+            if m.group(2) is None:
                 title, i = read_group(body, m.end() - 1, "\\section")
-                number = str(len(sections) + 1)
+                # \section* is unnumbered, so there is no number to cite and
+                # none for statements to build on.
+                number = None
+                if not m.group(1):
+                    number = str(sum(s["number"] is not None for s in sections) + 1)
                 title = self.inline(title.strip())
                 anchor = self.unique_id(title)
                 sections.append({"number": number, "title": title,
                                  "id": anchor, "blocks": []})
-                self.target = (number, anchor)
+                self.target = (number, anchor) if number else None
                 continue
 
-            env = m.group(1)
+            env = m.group(2)
             inner_end, i = env_end(body, m.end(), env)
             inner = body[m.end():inner_end]
             if env not in ("soundbite", "statement", "details", "advice"):
@@ -386,6 +390,8 @@ class Converter:
             if env == "soundbite":
                 section["blocks"].append(("soundbite", "\n".join(self.blocks(inner))))
             elif env == "statement":
+                if section["number"] is None:
+                    fail("statement in an unnumbered section", body, m.start())
                 title, start = read_group(inner, 0, "\\begin{statement}")
                 number = f"{section['number']}.{len(statements) + 1}"
                 title = self.inline(title.strip())
@@ -457,10 +463,24 @@ def render(intro, sections, notes, source_name):
                       '<div class="fold__body">', *intro[1:], "</div>", "</details>"]
         lines.append("</section>")
     for section in sections:
-        lines += [f'<section class="vision-section" id="{section["id"]}">',
-                  f'<h2><span class="vision-section__number">{section["number"]}'
-                  f'</span> {section["title"]}</h2>']
-        for kind, block in section["blocks"]:
+        blocks = section["blocks"]
+        if section["number"] is None:
+            lines += [f'<section class="vision-section" id="{section["id"]}">',
+                      f'<h2>{section["title"]}</h2>']
+            # An unnumbered section of plain text, such as the introduction:
+            # the first paragraph, and the rest behind a fold-out.
+            if len(blocks) > 1 and all(kind == "text" for kind, _ in blocks):
+                title = html.unescape(re.sub(r"<[^>]+>", "", section["title"]))
+                lines += [blocks[0][1], '<details class="fold">',
+                          f"<summary>Read the full {html.escape(title.lower())}</summary>",
+                          '<div class="fold__body">', *(b for _, b in blocks[1:]),
+                          "</div>", "</details>"]
+                blocks = []
+        else:
+            lines += [f'<section class="vision-section" id="{section["id"]}">',
+                      f'<h2><span class="vision-section__number">{section["number"]}'
+                      f'</span> {section["title"]}</h2>']
+        for kind, block in blocks:
             if kind == "soundbite":
                 lines += ['<div class="vision-soundbite">', block, "</div>"]
             elif kind == "statement":
