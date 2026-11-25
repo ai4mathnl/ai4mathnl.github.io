@@ -65,8 +65,11 @@ it to false and take "draft" out of the description in `vision.html`'s front
 matter.
 
 Commit the three files the script writes: `_includes/vision-body.html`,
-`_data/vision.json` (title, authors, date) and `assets/vision.pdf`. The date on
-the page is the day the PDF was compiled.
+`_data/vision.json` (title, authors, date, section titles) and
+`assets/vision.pdf`. The date on
+the page is the day the PDF was compiled. The list under "What will be
+discussed?" on the front page is made of the section titles, so it follows the
+document as well.
 
 The script understands only the LaTeX that the document uses, and stops with a
 message when it meets anything else, so that nothing reaches the page garbled.

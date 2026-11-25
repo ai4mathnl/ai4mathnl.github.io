@@ -15,5 +15,32 @@
       "role": "Leiden declaration representative"
     }
   ],
-  "date": "Draft version 25 November 2026"
+  "date": "Draft version 25 November 2026",
+  "sections": [
+    {
+      "number": "1",
+      "id": "affirm-the-humanity-of-mathematics",
+      "title": "Affirm the humanity of mathematics"
+    },
+    {
+      "number": "2",
+      "id": "new-horizons-for-mathematics-with-ai",
+      "title": "New horizons for mathematics with AI"
+    },
+    {
+      "number": "3",
+      "id": "skills-training-and-evaluation",
+      "title": "Skills, training and evaluation"
+    },
+    {
+      "number": "4",
+      "id": "overhaul-publishing-and-reviewing",
+      "title": "Overhaul publishing and reviewing"
+    },
+    {
+      "number": "5",
+      "id": "invest-in-open-and-secure-ai-infrastructure",
+      "title": "Invest in open and secure AI infrastructure"
+    }
+  ]
 }

@@ -6,7 +6,7 @@
 Writes three files, all of which are committed:
 
     _includes/vision-body.html   the document itself
-    _data/vision.json            title, authors and date for the page header
+    _data/vision.json            title, authors, date and section titles
     assets/vision.pdf            a copy of the compiled PDF, for download
 
 The PDF is taken from next to the .tex file unless --pdf says otherwise; this
@@ -538,6 +538,11 @@ def convert(tex, pdf, draft):
             "authors": authors, "date": plain(field("date"))}
 
     intro, sections = converter.document(body)
+    # The numbered sections, for the list of topics on the front page.
+    meta["sections"] = [
+        {"number": s["number"], "id": s["id"],
+         "title": html.unescape(re.sub(r"<[^>]+>", "", s["title"]))}
+        for s in sections if s["number"] is not None]
     body_html = converter.resolve(
         render(intro, sections, converter.notes, tex.name))
     return meta, body_html, converter, sections

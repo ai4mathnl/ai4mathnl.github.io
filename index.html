@@ -92,22 +92,17 @@ image: /assets/img/social-card.png
 
 <section class="section" id="topics">
   <h2>What will be discussed?</h2>
+  <p>
+    The discussions follow the sections of the
+    <a href="{{ '/vision/' | relative_url }}">{% if site.vision_draft %}draft {% endif %}vision document</a>:
+  </p>
+  {%- comment %} Section titles come from vision.tex, via tools/vision_to_site.py. {% endcomment %}
   <ul class="links">
-    <li>
-      What does it mean to be a mathematician in the presence of AI?
-    </li>
-    <li>
-      Affirming the humanity of mathematics
-    </li>
-    <li>
-      Skills &amp; training
-    </li>
-    <li>
-      Publishing &amp; peer review
-    </li>
-    <li>
-      Policy, funding &amp; governance
-    </li>
+    {%- for section in site.data.vision.sections -%}
+      <li>
+        <a href="{{ '/vision/' | relative_url }}#{{ section.id }}">{{ section.title }}</a>
+      </li>
+    {%- endfor -%}
   </ul>
 </section>
 
