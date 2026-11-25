@@ -18,7 +18,7 @@ file at the repository root in step.
 | Page text | `index.html` |
 | Registration page | `register.html` (served at `/register/`) |
 | Vision document page | `vision.html` (served at `/vision/`); its content is generated, see below |
-| Styling | `assets/css/style.css` |
+| Styling | `assets/css/site.css` (not `style.css`: the default GitHub Pages theme writes its own file to that name) |
 | Calendar file offered by "Add to calendar" | `calendar.ics` (reads `_config.yml`) |
 | Logos, icons, sharing card | `assets/img/` |
 
