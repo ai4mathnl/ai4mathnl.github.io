@@ -66,7 +66,9 @@ matter.
 
 Commit the three files the script writes: `_includes/vision-body.html`,
 `_data/vision.json` (title, authors, date, section titles) and
-`assets/vision.pdf`. The date on
+the PDF in `assets/`, which is named
+`AIM2027FutureOfMathVision - draft <date>.pdf` while the document's `\date`
+says it is a draft, and replaces the previous copy. The date on
 the page is the day the PDF was compiled. The list under "What will be
 discussed?" on the front page is made of the section titles, so it follows the
 document as well.

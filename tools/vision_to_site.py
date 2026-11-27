@@ -7,7 +7,8 @@ Writes three files, all of which are committed:
 
     _includes/vision-body.html   the document itself
     _data/vision.json            title, authors, date and section titles
-    assets/vision.pdf            a copy of the compiled PDF, for download
+    assets/AIM2027...pdf         a copy of the compiled PDF, for download,
+                                 named after PDF_NAME below
 
 The PDF is taken from next to the .tex file unless --pdf says otherwise; this
 script does not compile it. GitHub Pages cannot run this script, so rerun it by
@@ -27,6 +28,7 @@ import re
 import shutil
 import sys
 import unicodedata
+import urllib.parse
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -47,6 +49,10 @@ IGNORED = {"maketitle", "noindent", "smallskip", "medskip", "bigskip",
 WRAPPERS = {"emph": "em", "textit": "em", "textbf": "strong", "texttt": "code"}
 FOOTNOTES = {"footnote", "endnote"}
 LISTS = {"enumerate": "ol", "itemize": "ul"}
+# File name under which the PDF is offered for download. A draft, recognised
+# by the word "draft" in the document's \date, carries the day it was compiled.
+PDF_NAME = "AIM2027FutureOfMathVision"
+PDF_DRAFT_SUFFIX = " - draft {date}"
 # How many paragraphs of the introduction stay visible above its fold-out.
 LEAD_PARAGRAPHS = 2
 
@@ -548,6 +554,12 @@ def convert(tex, pdf, draft):
             authors.append({"name": plain(name), "role": plain(role)})
     meta = {"title": title[0], "subtitle": " ".join(title[1:]),
             "authors": authors, "date": plain(field("date"))}
+    name = PDF_NAME
+    if "draft" in meta["date"].lower():
+        name += PDF_DRAFT_SUFFIX.format(date=day.isoformat())
+    # The name has spaces in it, so the page needs it escaped for its link.
+    meta["pdf"] = name + ".pdf"
+    meta["pdf_url"] = urllib.parse.quote(meta["pdf"])
 
     intro, sections = converter.document(body)
     # The numbered sections, for the list of topics on the front page.
@@ -582,7 +594,10 @@ def main():
     (ROOT / "_includes/vision-body.html").write_text(body_html, encoding="utf-8")
     (ROOT / "_data/vision.json").write_text(
         json.dumps(meta, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    shutil.copyfile(pdf, ROOT / "assets/vision.pdf")
+    # Only one version is on offer at a time: clear out earlier copies.
+    for old in [*(ROOT / "assets").glob(PDF_NAME + "*.pdf"), ROOT / "assets/vision.pdf"]:
+        old.unlink(missing_ok=True)
+    shutil.copyfile(pdf, ROOT / "assets" / meta["pdf"])
 
     statements = sum(kind == "statement" for s in sections for kind, _ in s["blocks"])
     print(f"{meta['title']} ({meta['date']})")
