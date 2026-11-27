@@ -556,7 +556,7 @@ def convert(tex, pdf, draft):
             "authors": authors, "date": plain(field("date"))}
     name = PDF_NAME
     if "draft" in meta["date"].lower():
-        name += PDF_DRAFT_SUFFIX.format(date=day.isoformat())
+        name += PDF_DRAFT_SUFFIX.format(date=day.strftime("%d-%m-%Y"))
     # The name has spaces in it, so the page needs it escaped for its link.
     meta["pdf"] = name + ".pdf"
     meta["pdf_url"] = urllib.parse.quote(meta["pdf"])
