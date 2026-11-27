@@ -42,10 +42,20 @@ image: /assets/img/social-card.png
   {%- endif -%}
 </header>
 
+{%- comment %} The one thing on this page that should not be overlooked. {% endcomment %}
+{%- comment %} The whole block is the link; the "button" inside it is only a label. {% endcomment %}
+<a class="callout" href="{{ '/vision/' | relative_url }}">
+  <div class="callout__text">
+    <h2 class="callout__title">{% if site.vision_draft %}Draft vision{% else %}Vision{% endif %} document</h2>
+    <p class="callout__note">The starting point for the discussions at the workshop.</p>
+  </div>
+  <span class="button callout__button">Read the {% if site.vision_draft %}draft {% endif %}vision</span>
+</a>
+
 <section class="section" id="about">
   <h2>About the workshop</h2>
   <p>
-    We invite the mathematics community of the Netherlands to discuss what the future of mathematics with AI should look like. The organisers will prepare a draft vision document before the workshop. Based on feedback and discussions during the workshop, the draft will be further developed towards a published document stating a shared vision of AIM and the broader Dutch mathematics community for the future of mathematics with AI.
+    We invite the mathematics community of the Netherlands to discuss what the future of mathematics with AI should look like. The organisers have prepared a <a href="{{ '/vision/' | relative_url }}">draft vision document</a> as a starting point. Based on feedback and discussions during the workshop, the draft will be further developed towards a published document stating a shared vision of AIM and the broader Dutch mathematics community for the future of mathematics with AI.
   </p>
   <p>
     We will build on discussions started in, for example:
@@ -68,13 +78,15 @@ image: /assets/img/social-card.png
 
 <section class="section" id="programme">
   <h2>Programme</h2>
-  <p class="section__note">Provisional &mdash; details to be announced.</p>
   <ol class="programme">
     {%- for item in site.data.program -%}
       <li class="programme__item{% if item.kind == 'break' %} programme__item--break{% endif %}">
         <span class="programme__time">{{ item.time }}</span>
         <span class="programme__body">
-          <span class="programme__title">{{ item.title }}</span>
+          <span class="programme__title">
+            {{- item.title -}}
+            {%- if item.link_text %} <a href="{{ item.url | relative_url }}">{{ item.link_text }}</a>{% endif -%}
+          </span>
           {%- if item.speaker -%}<span class="programme__speaker">{{ item.speaker }}</span>{%- endif -%}
           {%- if item.note -%}<span class="programme__note">{{ item.note }}</span>{%- endif -%}
         </span>
@@ -92,22 +104,15 @@ image: /assets/img/social-card.png
 
 <section class="section" id="topics">
   <h2>What will be discussed?</h2>
+  <p>
+    The discussions will cover the following topics from the
+    <a href="{{ '/vision/' | relative_url }}">{% if site.vision_draft %}draft {% endif %}vision document</a>:
+  </p>
+  {%- comment %} Section titles come from vision.tex, via tools/vision_to_site.py. {% endcomment %}
   <ul class="links">
-    <li>
-      What does it mean to be a mathematician in the presence of AI?
-    </li>
-    <li>
-      Affirming the humanity of mathematics
-    </li>
-    <li>
-      Skills &amp; training
-    </li>
-    <li>
-      Publishing &amp; peer review
-    </li>
-    <li>
-      Policy, funding &amp; governance
-    </li>
+    {%- for section in site.data.vision.sections -%}
+      <li>{{ section.title }}</li>
+    {%- endfor -%}
   </ul>
 </section>
 

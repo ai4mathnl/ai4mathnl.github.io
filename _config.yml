@@ -31,6 +31,12 @@ workshop:
   cancellation_email: "nada.mitrovic@cwi.nl"
   contact_email: ""
 
+# The vision document at /vision/. While this is true the page announces in
+# its header that it is a draft for discussion at the workshop. Set it to
+# false when the final version goes up, and take "draft" out of the
+# description in vision.html's front matter at the same time.
+vision_draft: true
+
 # The organising body. The list of people lives in _data/organisers.yml.
 organiser:
   name: "AIM"
