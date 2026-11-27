@@ -590,9 +590,17 @@ def main():
     except ConversionError as error:
         sys.exit(f"error: {error}")
 
+    # The front page lists the section titles as the topics for discussion.
+    data = ROOT / "_data/vision.json"
+    titles = [s["title"] for s in meta["sections"]]
+    previous = titles
+    if data.is_file():
+        previous = [s["title"] for s in json.loads(
+            data.read_text(encoding="utf-8")).get("sections", [])]
+
     (ROOT / "_includes").mkdir(exist_ok=True)
     (ROOT / "_includes/vision-body.html").write_text(body_html, encoding="utf-8")
-    (ROOT / "_data/vision.json").write_text(
+    data.write_text(
         json.dumps(meta, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     # Only one version is on offer at a time: clear out earlier copies.
     for old in [*(ROOT / "assets").glob(PDF_NAME + "*.pdf"), ROOT / "assets/vision.pdf"]:
@@ -609,6 +617,13 @@ def main():
     if converter.editorial_seen:
         print(f"warning: {converter.editorial_seen} editorial note(s) are shown "
               "on the page; do not publish this version", file=sys.stderr)
+    if titles != previous:
+        print("note: the section titles changed. The topics under \"What will "
+              "be discussed?\" on the front page follow them:", file=sys.stderr)
+        for title in titles:
+            print(f"  - {title}", file=sys.stderr)
+        print("  Check that the list still reads well there, and pass it on to "
+              "CWI for their copy of the page.", file=sys.stderr)
 
 
 if __name__ == "__main__":
