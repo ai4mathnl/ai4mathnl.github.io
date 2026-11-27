@@ -36,7 +36,7 @@ image: /assets/img/social-card.png
   </ul>
   <p class="vision-date">{{ vision.date }}</p>
   <p class="hero__actions">
-    <a class="button" href="{{ '/assets/' | relative_url }}{{ vision.pdf_url }}">Download {% if site.vision_draft %}draft {% endif %}PDF</a>
+    <a class="button" href="{{ '/assets/' | relative_url }}{{ vision.pdf_url }}">Download PDF</a>
     {%- comment %} Shown by vision.js: without scripts it could not do anything. {% endcomment -%}
     <button class="button button--quiet" type="button" data-vision-toggle hidden>Expand all</button>
   </p>
