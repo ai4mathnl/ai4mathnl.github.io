@@ -49,8 +49,8 @@ IGNORED = {"maketitle", "noindent", "smallskip", "medskip", "bigskip",
 WRAPPERS = {"emph": "em", "textit": "em", "textbf": "strong", "texttt": "code"}
 FOOTNOTES = {"footnote", "endnote"}
 LISTS = {"enumerate": "ol", "itemize": "ul"}
-# File name under which the PDF is offered for download. A draft, recognised
-# by the word "draft" in the document's \date, carries the day it was compiled.
+# File name under which the PDF is offered for download. While vision_draft in
+# _config.yml is true, the name says so and carries the day it was compiled.
 PDF_NAME = "AIM2027FutureOfMathVision"
 PDF_DRAFT_SUFFIX = " - draft {date}"
 # How many paragraphs of the introduction stay visible above its fold-out.
@@ -241,11 +241,18 @@ class Converter:
         elif name == "url":
             url, j = read_group(s, j, "\\url")
             out.append(f'<a href="{self.url(url)}">{html.escape(self.plain_url(url))}</a>')
+        elif name == "textsuperscript":
+            # In practice a second reference to an existing note.
+            arg, j = read_group(s, j, "\\textsuperscript")
+            out.append(f'<sup class="noteref">{self.inline(arg)}</sup>')
         elif name in FOOTNOTES:
             arg, j = read_group(s, j, "\\" + name)
             self.notes.append(None)  # claim the number before nested notes
             n = len(self.notes)
+            # A \label inside the note refers to the note itself.
+            outer, self.target = self.target, (str(n), f"note-{n}")
             self.notes[n - 1] = self.inline(arg.strip())
+            self.target = outer
             out.append(f'<sup class="noteref"><a href="#note-{n}" id="noteref-{n}" '
                        f'aria-label="Note {n}">{n}</a></sup>')
         elif name == "label":
@@ -408,7 +415,7 @@ class Converter:
                     fail("statement in an unnumbered section", body, m.start())
                 title, start = read_group(inner, 0, "\\begin{statement}")
                 number = f"{section['number']}.{len(statements) + 1}"
-                title = self.inline(title.strip())
+                title = self.inline(" ".join(title.split()))
                 anchor = self.unique_id(title)
                 self.target = (number, anchor)
                 section["blocks"].append(("statement", {
@@ -552,10 +559,14 @@ def convert(tex, pdf, draft):
         name, _, role = author.partition(r"\\")
         if name.strip():
             authors.append({"name": plain(name), "role": plain(role)})
+    # The date line may end in a link to this very site, for readers of the
+    # PDF; on the page itself that would only point to where they already are.
+    date = re.sub(r"\\href\{[^{}]*\}\{[^{}]*\}|\\url\{[^{}]*\}", "", field("date"))
     meta = {"title": title[0], "subtitle": " ".join(title[1:]),
-            "authors": authors, "date": plain(field("date"))}
+            "authors": authors, "date": plain(date).rstrip(" ,")}
     name = PDF_NAME
-    if "draft" in meta["date"].lower():
+    config = (ROOT / "_config.yml").read_text(encoding="utf-8")
+    if re.search(r"^vision_draft:\s*true\s*$", config, re.M):
         name += PDF_DRAFT_SUFFIX.format(date=day.strftime("%d-%m-%Y"))
     # The name has spaces in it, so the page needs it escaped for its link.
     meta["pdf"] = name + ".pdf"

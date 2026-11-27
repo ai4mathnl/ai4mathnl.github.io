@@ -556,6 +556,9 @@ button.button {
   color: var(--muted);
 }
 
+/* Running text that introduces the list. */
+.statement__advice p { margin: 0 0 0.5rem; }
+
 .statement__advice ol,
 .statement__advice ul {
   margin: 0;
