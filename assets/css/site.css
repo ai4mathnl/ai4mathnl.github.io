@@ -619,18 +619,6 @@ button.button {
   white-space: nowrap;
 }
 
-/* ---- Footer ---- */
-.site-footer {
-  max-width: 820px;
-  margin: 0 auto;
-  padding: 1.25rem;
-  border-top: 1px solid var(--border);
-  color: var(--muted);
-  font-size: 0.85rem;
-}
-
-.site-footer p { margin: 0; }
-
 @media (max-width: 480px) {
   .page { padding-top: 1.75rem; }
   .hero__kicker { font-size: 0.9rem; }
