@@ -49,10 +49,10 @@ IGNORED = {"maketitle", "noindent", "smallskip", "medskip", "bigskip",
 WRAPPERS = {"emph": "em", "textit": "em", "textbf": "strong", "texttt": "code"}
 FOOTNOTES = {"footnote", "endnote"}
 LISTS = {"enumerate": "ol", "itemize": "ul"}
-# File name under which the PDF is offered for download. While vision_draft in
-# _config.yml is true, the name says so and carries the day it was compiled.
+# File name under which the PDF is offered for download. It is followed by the
+# version and the date from the document's \date line, as in
+# "AIM2027FutureOfMathVision - v1 - 27-11-2026.pdf".
 PDF_NAME = "AIM2027FutureOfMathVision"
-PDF_DRAFT_SUFFIX = " - draft {date}"
 # How many paragraphs of the introduction stay visible above its fold-out.
 LEAD_PARAGRAPHS = 2
 
@@ -534,6 +534,17 @@ def pdf_date(pdf):
     return datetime.date.fromtimestamp(pdf.stat().st_mtime)
 
 
+def stated_date(text):
+    """The date written out in the \\date line ("November 27, 2026" or
+    "27 November 2026"), if there is one."""
+    months = "|".join(MONTHS)
+    m = (re.search(rf"\b(?P<m>{months})\s+(?P<d>\d{{1,2}}),?\s+(?P<y>\d{{4}})", text)
+         or re.search(rf"\b(?P<d>\d{{1,2}})\s+(?P<m>{months})\s+(?P<y>\d{{4}})", text))
+    if not m:
+        return None
+    return datetime.date(int(m["y"]), MONTHS.index(m["m"]) + 1, int(m["d"]))
+
+
 def convert(tex, pdf, draft):
     src = strip_comments(tex.read_text(encoding="utf-8"))
     start, end = src.find(r"\begin{document}"), src.find(r"\end{document}")
@@ -565,9 +576,10 @@ def convert(tex, pdf, draft):
     meta = {"title": title[0], "subtitle": " ".join(title[1:]),
             "authors": authors, "date": plain(date).rstrip(" ,")}
     name = PDF_NAME
-    config = (ROOT / "_config.yml").read_text(encoding="utf-8")
-    if re.search(r"^vision_draft:\s*true\s*$", config, re.M):
-        name += PDF_DRAFT_SUFFIX.format(date=day.strftime("%d-%m-%Y"))
+    version = re.search(r"\bversion\s+(\d+(?:\.\d+)*)", meta["date"], re.I)
+    if version:  # "Version 1.0" becomes "v1", "Version 1.2" becomes "v1.2"
+        name += " - v" + re.sub(r"(\.0)+$", "", version.group(1))
+    name += " - " + (stated_date(meta["date"]) or day).strftime("%d-%m-%Y")
     # The name has spaces in it, so the page needs it escaped for its link.
     meta["pdf"] = name + ".pdf"
     meta["pdf_url"] = urllib.parse.quote(meta["pdf"])
