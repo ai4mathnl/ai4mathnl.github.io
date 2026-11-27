@@ -47,6 +47,8 @@ IGNORED = {"maketitle", "noindent", "smallskip", "medskip", "bigskip",
 WRAPPERS = {"emph": "em", "textit": "em", "textbf": "strong", "texttt": "code"}
 FOOTNOTES = {"footnote", "endnote"}
 LISTS = {"enumerate": "ol", "itemize": "ul"}
+# How many paragraphs of the introduction stay visible above its fold-out.
+LEAD_PARAGRAPHS = 2
 
 
 class ConversionError(Exception):
@@ -182,7 +184,13 @@ class Converter:
             elif c == "}":
                 fail("unmatched }", s, i)
             elif c == "$":
-                fail("math is not supported", s, i)
+                # A lone symbol such as $L$ is set in italics. Anything more
+                # would need a real math renderer.
+                m = re.compile(r"\$([A-Za-z0-9]+)\$").match(s, i)
+                if not m:
+                    fail("math beyond a single symbol is not supported", s, i)
+                out.append(f"<i>{m.group(1)}</i>")
+                i = m.end()
             elif c == "~":
                 out.append("&nbsp;")
                 i += 1
@@ -456,11 +464,12 @@ def render(intro, sections, notes, source_name):
              "Do not edit: rerun the script instead. -->",
              "{% raw %}"]
     if intro:
-        lines += ['<section class="vision-intro">', intro[0]]
-        if len(intro) > 1:
+        lines += ['<section class="vision-intro">', *intro[:LEAD_PARAGRAPHS]]
+        if len(intro) > LEAD_PARAGRAPHS:
             lines += ['<details class="fold">',
                       "<summary>Read the full introduction</summary>",
-                      '<div class="fold__body">', *intro[1:], "</div>", "</details>"]
+                      '<div class="fold__body">', *intro[LEAD_PARAGRAPHS:],
+                      "</div>", "</details>"]
         lines.append("</section>")
     for section in sections:
         blocks = section["blocks"]
@@ -468,12 +477,15 @@ def render(intro, sections, notes, source_name):
             lines += [f'<section class="vision-section" id="{section["id"]}">',
                       f'<h2>{section["title"]}</h2>']
             # An unnumbered section of plain text, such as the introduction:
-            # the first paragraph, and the rest behind a fold-out.
-            if len(blocks) > 1 and all(kind == "text" for kind, _ in blocks):
+            # its opening paragraphs, and the rest behind a fold-out.
+            if (len(blocks) > LEAD_PARAGRAPHS
+                    and all(kind == "text" for kind, _ in blocks)):
                 title = html.unescape(re.sub(r"<[^>]+>", "", section["title"]))
-                lines += [blocks[0][1], '<details class="fold">',
+                lines += [*(b for _, b in blocks[:LEAD_PARAGRAPHS]),
+                          '<details class="fold">',
                           f"<summary>Read the full {html.escape(title.lower())}</summary>",
-                          '<div class="fold__body">', *(b for _, b in blocks[1:]),
+                          '<div class="fold__body">',
+                          *(b for _, b in blocks[LEAD_PARAGRAPHS:]),
                           "</div>", "</details>"]
                 blocks = []
         else:
